@@ -1,0 +1,280 @@
+{
+ "id": "PM-2019-07-02",
+ "type": "postmortem",
+ "title": "Details of the Cloudflare outage on July 2, 2019",
+ "nodes": [
+  {
+   "label": "Commitment",
+   "id": "COM-cpu-protection",
+   "props": {
+    "text": "Re-introduce the excessive CPU usage protection that got removed. (Done)",
+    "made_at": "2019-07-12T00:00:00Z",
+    "url": "https://blog.cloudflare.com/details-of-the-cloudflare-outage-on-july-2-2019/"
+   },
+   "quote": "Re-introduce the excessive CPU usage protection that got removed. (Done)"
+  },
+  {
+   "label": "Commitment",
+   "id": "COM-inspect-rules",
+   "props": {
+    "text": "Manually inspecting all 3,868 rules in the WAF Managed Rules to find and correct any other instances of possible excessive backtracking. (Inspection complete)",
+    "made_at": "2019-07-12T00:00:00Z",
+    "url": "https://blog.cloudflare.com/details-of-the-cloudflare-outage-on-july-2-2019/"
+   },
+   "quote": "Manually inspecting all 3,868 rules in the WAF Managed Rules to find and correct any other instances of possible excessive backtracking. (Inspection complete)"
+  },
+  {
+   "label": "Commitment",
+   "id": "COM-profile-rules",
+   "props": {
+    "text": "Introduce performance profiling for all rules to the test suite. (ETA:  July 19)",
+    "made_at": "2019-07-12T00:00:00Z",
+    "url": "https://blog.cloudflare.com/details-of-the-cloudflare-outage-on-july-2-2019/"
+   },
+   "quote": "Introduce performance profiling for all rules to the test suite. (ETA:  July 19)"
+  },
+  {
+   "label": "Commitment",
+   "id": "COM-regex-engine",
+   "props": {
+    "text": "Switching to either the re2 or Rust regex engine which both have run-time guarantees. (ETA: July 31)",
+    "made_at": "2019-07-12T00:00:00Z",
+    "url": "https://blog.cloudflare.com/details-of-the-cloudflare-outage-on-july-2-2019/"
+   },
+   "quote": "Switching to either the re2 or Rust regex engine which both have run-time guarantees. (ETA: July 31)"
+  },
+  {
+   "label": "Commitment",
+   "id": "COM-staged-rollout",
+   "props": {
+    "text": "Changing the SOP to do staged rollouts of rules in the same manner used for other software at Cloudflare while retaining the ability to do emergency global deployment for active attacks.",
+    "made_at": "2019-07-12T00:00:00Z",
+    "url": "https://blog.cloudflare.com/details-of-the-cloudflare-outage-on-july-2-2019/"
+   },
+   "quote": "Changing the SOP to do staged rollouts of rules in the same manner used for other software at Cloudflare while retaining the ability to do emergency global deployment for active attacks."
+  },
+  {
+   "label": "Commitment",
+   "id": "COM-dashboard-off-edge",
+   "props": {
+    "text": "Putting in place an emergency ability to take the Cloudflare Dashboard and API off Cloudflare's edge.",
+    "made_at": "2019-07-12T00:00:00Z",
+    "url": "https://blog.cloudflare.com/details-of-the-cloudflare-outage-on-july-2-2019/"
+   },
+   "quote": "Putting in place an emergency ability to take the Cloudflare Dashboard and API off Cloudflare's edge."
+  },
+  {
+   "label": "Commitment",
+   "id": "COM-status-page",
+   "props": {
+    "text": "Automating update of the Cloudflare Status page.",
+    "made_at": "2019-07-12T00:00:00Z",
+    "url": "https://blog.cloudflare.com/details-of-the-cloudflare-outage-on-july-2-2019/"
+   },
+   "quote": "Automating update of the Cloudflare Status page."
+  }
+ ],
+ "links": [
+  {
+   "from": [
+    "Person",
+    "name:John Graham-Cumming"
+   ],
+   "type": "MADE",
+   "to": [
+    "Commitment",
+    "COM-cpu-protection"
+   ]
+  },
+  {
+   "from": [
+    "Commitment",
+    "COM-cpu-protection"
+   ],
+   "type": "MADE_TO",
+   "to": [
+    "Customer",
+    "name:All Cloudflare customers"
+   ]
+  },
+  {
+   "from": [
+    "Person",
+    "name:John Graham-Cumming"
+   ],
+   "type": "MADE",
+   "to": [
+    "Commitment",
+    "COM-inspect-rules"
+   ]
+  },
+  {
+   "from": [
+    "Commitment",
+    "COM-inspect-rules"
+   ],
+   "type": "MADE_TO",
+   "to": [
+    "Customer",
+    "name:All Cloudflare customers"
+   ]
+  },
+  {
+   "from": [
+    "Person",
+    "name:John Graham-Cumming"
+   ],
+   "type": "MADE",
+   "to": [
+    "Commitment",
+    "COM-profile-rules"
+   ]
+  },
+  {
+   "from": [
+    "Commitment",
+    "COM-profile-rules"
+   ],
+   "type": "MADE_TO",
+   "to": [
+    "Customer",
+    "name:All Cloudflare customers"
+   ]
+  },
+  {
+   "from": [
+    "Person",
+    "name:John Graham-Cumming"
+   ],
+   "type": "MADE",
+   "to": [
+    "Commitment",
+    "COM-regex-engine"
+   ]
+  },
+  {
+   "from": [
+    "Commitment",
+    "COM-regex-engine"
+   ],
+   "type": "MADE_TO",
+   "to": [
+    "Customer",
+    "name:All Cloudflare customers"
+   ]
+  },
+  {
+   "from": [
+    "Person",
+    "name:John Graham-Cumming"
+   ],
+   "type": "MADE",
+   "to": [
+    "Commitment",
+    "COM-staged-rollout"
+   ]
+  },
+  {
+   "from": [
+    "Commitment",
+    "COM-staged-rollout"
+   ],
+   "type": "MADE_TO",
+   "to": [
+    "Customer",
+    "name:All Cloudflare customers"
+   ]
+  },
+  {
+   "from": [
+    "Person",
+    "name:John Graham-Cumming"
+   ],
+   "type": "MADE",
+   "to": [
+    "Commitment",
+    "COM-dashboard-off-edge"
+   ]
+  },
+  {
+   "from": [
+    "Commitment",
+    "COM-dashboard-off-edge"
+   ],
+   "type": "MADE_TO",
+   "to": [
+    "Customer",
+    "name:All Cloudflare customers"
+   ]
+  },
+  {
+   "from": [
+    "Person",
+    "name:John Graham-Cumming"
+   ],
+   "type": "MADE",
+   "to": [
+    "Commitment",
+    "COM-status-page"
+   ]
+  },
+  {
+   "from": [
+    "Commitment",
+    "COM-status-page"
+   ],
+   "type": "MADE_TO",
+   "to": [
+    "Customer",
+    "name:All Cloudflare customers"
+   ]
+  },
+  {
+   "from": [
+    "Commitment",
+    "COM-staged-rollout"
+   ],
+   "type": "ABOUT",
+   "to": [
+    "Decision",
+    "SOP-1"
+   ]
+  },
+  {
+   "from": [
+    "Commitment",
+    "COM-dashboard-off-edge"
+   ],
+   "type": "ABOUT",
+   "to": [
+    "Service",
+    "dashboard-api"
+   ]
+  },
+  {
+   "from": [
+    "Commitment",
+    "COM-status-page"
+   ],
+   "type": "ABOUT",
+   "to": [
+    "Service",
+    "status-page"
+   ]
+  }
+ ],
+ "mentions": [
+  [
+   "Service",
+   "waf"
+  ],
+  [
+   "Service",
+   "teamcity"
+  ],
+  [
+   "Person",
+   "name:John Graham-Cumming"
+  ]
+ ]
+}

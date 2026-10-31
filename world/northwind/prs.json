@@ -1,0 +1,273 @@
+[
+ {
+  "number": 301,
+  "title": "Scale payouts workers to 12 replicas",
+  "user": {
+   "login": "dsantos"
+  },
+  "merged_at": "2026-06-10T08:20:00Z",
+  "base": {
+   "repo": {
+    "name": "payouts-service"
+   }
+  },
+  "files": [
+   "deploy/replicas.yaml"
+  ],
+  "reviews": [
+   {
+    "user": {
+     "login": "ravim"
+    }
+   }
+  ],
+  "body": ""
+ },
+ {
+  "number": 377,
+  "title": "Retry ledger writes without backoff",
+  "user": {
+   "login": "ravim"
+  },
+  "merged_at": "2026-08-02T06:10:00Z",
+  "base": {
+   "repo": {
+    "name": "payments-core"
+   }
+  },
+  "files": [
+   "payments/ledger_client.py"
+  ],
+  "reviews": [
+   {
+    "user": {
+     "login": "asharao"
+    }
+   }
+  ],
+  "body": ""
+ },
+ {
+  "number": 380,
+  "title": "Add exponential backoff to ledger retries",
+  "user": {
+   "login": "asharao"
+  },
+  "merged_at": "2026-08-02T09:45:00Z",
+  "base": {
+   "repo": {
+    "name": "payments-core"
+   }
+  },
+  "files": [
+   "payments/ledger_client.py",
+   "tests/test_retry.py"
+  ],
+  "reviews": [
+   {
+    "user": {
+     "login": "ravim"
+    }
+   },
+   {
+    "user": {
+     "login": "tnovak"
+    }
+   }
+  ],
+  "body": "Fixes INC-101."
+ },
+ {
+  "number": 398,
+  "title": "Cart totals rounding fix",
+  "user": {
+   "login": "ohaddad"
+  },
+  "merged_at": "2026-09-20T12:00:00Z",
+  "base": {
+   "repo": {
+    "name": "cart-service"
+   }
+  },
+  "files": [
+   "cart/totals.py"
+  ],
+  "reviews": [
+   {
+    "user": {
+     "login": "meit"
+    }
+   }
+  ],
+  "body": ""
+ },
+ {
+  "number": 405,
+  "title": "Refresh fraud model weights",
+  "user": {
+   "login": "dsantos"
+  },
+  "merged_at": "2026-10-01T13:00:00Z",
+  "base": {
+   "repo": {
+    "name": "fraud-scorer"
+   }
+  },
+  "files": [
+   "model/weights.bin"
+  ],
+  "reviews": [
+   {
+    "user": {
+     "login": "ravim"
+    }
+   }
+  ],
+  "body": ""
+ },
+ {
+  "number": 409,
+  "title": "Show payout fees in dashboard",
+  "user": {
+   "login": "jberg"
+  },
+  "merged_at": "2026-10-02T15:10:00Z",
+  "base": {
+   "repo": {
+    "name": "merchant-dashboard"
+   }
+  },
+  "files": [
+   "web/payouts.tsx"
+  ],
+  "reviews": [
+   {
+    "user": {
+     "login": "priyan"
+    }
+   }
+  ],
+  "body": ""
+ },
+ {
+  "number": 412,
+  "title": "Lower ledger connection pool to 20",
+  "user": {
+   "login": "asharao"
+  },
+  "merged_at": "2026-10-04T09:00:00Z",
+  "base": {
+   "repo": {
+    "name": "payments-core"
+   }
+  },
+  "files": [
+   "payments/config.py",
+   "tests/test_ledger_cap.py"
+  ],
+  "reviews": [
+   {
+    "user": {
+     "login": "ravim"
+    }
+   }
+  ],
+  "body": "Implements ADR-7."
+ },
+ {
+  "number": 414,
+  "title": "New pay button styling",
+  "user": {
+   "login": "ohaddad"
+  },
+  "merged_at": "2026-10-04T09:40:00Z",
+  "base": {
+   "repo": {
+    "name": "hosted-checkout-web"
+   }
+  },
+  "files": [
+   "web/button.css"
+  ],
+  "reviews": [
+   {
+    "user": {
+     "login": "meit"
+    }
+   }
+  ],
+  "body": ""
+ },
+ {
+  "number": 415,
+  "title": "Add index on ledger entries",
+  "user": {
+   "login": "lenaf"
+  },
+  "merged_at": "2026-10-03T15:30:00Z",
+  "base": {
+   "repo": {
+    "name": "ledger-db"
+   }
+  },
+  "files": [
+   "migrations/0042_entries_index.sql"
+  ],
+  "reviews": [
+   {
+    "user": {
+     "login": "tnovak"
+    }
+   }
+  ],
+  "body": ""
+ },
+ {
+  "number": 416,
+  "title": "Receipt email template refresh",
+  "user": {
+   "login": "lenaf"
+  },
+  "merged_at": "2026-10-04T08:00:00Z",
+  "base": {
+   "repo": {
+    "name": "notification-service"
+   }
+  },
+  "files": [
+   "templates/receipt.html"
+  ],
+  "reviews": [
+   {
+    "user": {
+     "login": "tnovak"
+    }
+   }
+  ],
+  "body": ""
+ },
+ {
+  "number": 417,
+  "title": "Payout batching window to 15 minutes",
+  "user": {
+   "login": "dsantos"
+  },
+  "merged_at": "2026-10-04T10:05:00Z",
+  "base": {
+   "repo": {
+    "name": "payouts-service"
+   }
+  },
+  "files": [
+   "payouts/config.py"
+  ],
+  "reviews": [
+   {
+    "user": {
+     "login": "ravim"
+    }
+   }
+  ],
+  "body": ""
+ }
+]

@@ -1,0 +1,64 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: {name: hosted-checkout-web, description: Hosted payment page served to shoppers, annotations: {northwind/tier: "1"}}
+spec: {type: website, owner: Checkout, dependsOn: [component:checkout-api]}
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: {name: checkout-api, description: Public payments API that creates and confirms charges, annotations: {northwind/tier: "1"}}
+spec: {type: service, owner: Checkout, dependsOn: [component:cart-service, component:payments-core, component:notification-service]}
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: {name: cart-service, description: Cart totals and tax, annotations: {northwind/tier: "2"}}
+spec: {type: service, owner: Checkout, dependsOn: []}
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: {name: payments-core, description: Authorises and captures charges against the ledger, annotations: {northwind/tier: "1"}}
+spec: {type: service, owner: Payments, dependsOn: [component:ledger-db, component:fraud-scorer, resource:cardnet]}
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: {name: fraud-scorer, description: Risk score for each charge, annotations: {northwind/tier: "2"}}
+spec: {type: service, owner: Payments, dependsOn: []}
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: {name: payouts-service, description: Settles merchant balances, annotations: {northwind/tier: "2"}}
+spec: {type: service, owner: Payments, dependsOn: [component:ledger-db, component:payments-core]}
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: {name: webhooks-service, description: Delivers payment events to merchants, annotations: {northwind/tier: "2"}}
+spec: {type: service, owner: Merchant, dependsOn: [component:payments-core]}
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: {name: merchant-dashboard, description: Merchant-facing web console, annotations: {northwind/tier: "2"}}
+spec: {type: website, owner: Merchant, dependsOn: [component:reporting-service]}
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: {name: reporting-service, description: Aggregated transaction reports, annotations: {northwind/tier: "3"}}
+spec: {type: service, owner: Merchant, dependsOn: [component:ledger-db]}
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: {name: ledger-db, description: Double-entry ledger database, annotations: {northwind/tier: "1"}}
+spec: {type: database, owner: Platform, dependsOn: []}
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: {name: notification-service, description: Receipts and alerts by email, annotations: {northwind/tier: "3"}}
+spec: {type: service, owner: Platform, dependsOn: [resource:sendwave]}
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata: {name: cardnet, description: CardNet Acquiring}
+spec: {type: vendor, owner: Payments}
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata: {name: sendwave, description: SendWave Email}
+spec: {type: vendor, owner: Platform}

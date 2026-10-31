@@ -1,0 +1,16 @@
+{
+ "shifts": [
+  {
+   "service": "waf",
+   "email": "sre-oncall@cloudflare-2019.example",
+   "start": "2019-07-01T00:00:00Z",
+   "end": "2019-07-08T00:00:00Z"
+  },
+  {
+   "service": "edge-proxy",
+   "email": "sre-oncall@cloudflare-2019.example",
+   "start": "2019-07-01T00:00:00Z",
+   "end": "2019-07-08T00:00:00Z"
+  }
+ ]
+}

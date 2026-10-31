@@ -1,0 +1,94 @@
+{
+ "id": "ADR-7",
+ "type": "adr",
+ "title": "ADR-7: Cap the ledger pool at 20 connections per payments pod",
+ "nodes": [
+  {
+   "label": "Decision",
+   "id": "ADR-7",
+   "props": {
+    "title": "Cap the ledger pool at 20 connections per payments pod",
+    "status": "accepted",
+    "decided_at": "2026-09-28",
+    "risk": "Under burst traffic, requests beyond the pool size fail immediately unless a bounded wait queue is added in front of the pool."
+   },
+   "quote": "Each payments-core pod holds at most 20 ledger-db connections, so that all pods together stay under the ledger-db limit of 100."
+  }
+ ],
+ "links": [
+  {
+   "from": [
+    "Person",
+    "name:Tomas Novak"
+   ],
+   "type": "DECIDED",
+   "to": [
+    "Decision",
+    "ADR-7"
+   ],
+   "quote": "Deciders: Tomas Novak"
+  },
+  {
+   "from": [
+    "Decision",
+    "ADR-7"
+   ],
+   "type": "SUPERSEDES",
+   "to": [
+    "Decision",
+    "ADR-3"
+   ],
+   "quote": "Supersedes: ADR-3"
+  },
+  {
+   "from": [
+    "Decision",
+    "ADR-7"
+   ],
+   "type": "MOTIVATED_BY",
+   "to": [
+    "Incident",
+    "INC-088"
+   ],
+   "quote": "INC-088 took ledger-db down when payouts scaled out and the database ran out of connections."
+  },
+  {
+   "from": [
+    "Decision",
+    "ADR-7"
+   ],
+   "type": "GOVERNS",
+   "to": [
+    "Service",
+    "payments-core"
+   ],
+   "quote": "Each payments-core pod holds at most 20 ledger-db connections, so that all pods together stay under the ledger-db limit of 100."
+  },
+  {
+   "from": [
+    "Decision",
+    "ADR-7"
+   ],
+   "type": "GOVERNS",
+   "to": [
+    "Service",
+    "ledger-db"
+   ],
+   "quote": "ledger-db can no longer be exhausted by payments-core."
+  }
+ ],
+ "mentions": [
+  [
+   "Service",
+   "payments-core"
+  ],
+  [
+   "Service",
+   "ledger-db"
+  ],
+  [
+   "Service",
+   "payouts-service"
+  ]
+ ]
+}

@@ -1,0 +1,110 @@
+{
+ "id": "BRD-12",
+ "type": "brd",
+ "title": "BRD-12: Festive season readiness",
+ "nodes": [
+  {
+   "label": "Requirement",
+   "id": "BRD-12-R1",
+   "props": {
+    "text": "checkout-api must sustain 500 charges per second for the duration of a customer sale event.",
+    "target": "500 charges per second"
+   },
+   "quote": "R1. checkout-api must sustain 500 charges per second for the duration of a customer sale event."
+  },
+  {
+   "label": "Requirement",
+   "id": "BRD-12-R2",
+   "props": {
+    "text": "payments-core must answer 99% of charges within 800 ms during sale events.",
+    "target": "p99 under 800 ms"
+   },
+   "quote": "R2. payments-core must answer 99% of charges within 800 ms during sale events."
+  },
+  {
+   "label": "Requirement",
+   "id": "BRD-12-R3",
+   "props": {
+    "text": "Merchants on enterprise plans must be told about any payments incident within 15 minutes.",
+    "target": "notify within 15 minutes"
+   },
+   "quote": "R3. Merchants on enterprise plans must be told about any payments incident within 15 minutes."
+  }
+ ],
+ "links": [
+  {
+   "from": [
+    "Requirement",
+    "BRD-12-R1"
+   ],
+   "type": "APPLIES_TO",
+   "to": [
+    "Service",
+    "checkout-api"
+   ],
+   "quote": "R1. checkout-api must sustain 500 charges per second for the duration of a customer sale event."
+  },
+  {
+   "from": [
+    "Requirement",
+    "BRD-12-R2"
+   ],
+   "type": "APPLIES_TO",
+   "to": [
+    "Service",
+    "payments-core"
+   ],
+   "quote": "R2. payments-core must answer 99% of charges within 800 ms during sale events."
+  },
+  {
+   "from": [
+    "Requirement",
+    "BRD-12-R3"
+   ],
+   "type": "APPLIES_TO",
+   "to": [
+    "Service",
+    "payments-core"
+   ],
+   "quote": "R3. Merchants on enterprise plans must be told about any payments incident within 15 minutes."
+  },
+  {
+   "from": [
+    "Customer",
+    "name:Larkspur Retail"
+   ],
+   "type": "REQUESTED",
+   "to": [
+    "Requirement",
+    "BRD-12-R1"
+   ],
+   "quote": "Larkspur Retail runs its Festive Mega Sale in early October and expects three times its normal checkout volume."
+  },
+  {
+   "from": [
+    "Person",
+    "name:Sofia Marin"
+   ],
+   "type": "REQUESTED",
+   "to": [
+    "Requirement",
+    "BRD-12-R3"
+   ],
+   "quote": "Owner: Sofia Marin"
+  }
+ ],
+ "mentions": [
+  [
+   "Customer",
+   "name:Larkspur Retail"
+  ],
+  [
+   "Service",
+   "checkout-api"
+  ],
+  [
+   "Service",
+   "payments-core"
+  ]
+ ]
+}

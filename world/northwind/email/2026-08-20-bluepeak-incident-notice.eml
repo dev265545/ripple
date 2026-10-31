@@ -1,0 +1,12 @@
+Message-ID: <2026-08-20-bluepeak-incident-notice@mail.northwindpay.example>
+From: Clara Jensen <clara@northwindpay.example>
+To: Marco Ortiz <marco@bluepeak.example>
+Date: Thu, 20 Aug 2026 15:40:00 +0000
+Subject: Incident notifications going forward
+Content-Type: text/plain; charset=utf-8
+
+Hi Marco,
+
+After the August timeouts I want to be clear about what you can expect. We will notify Bluepeak within 15 minutes of any incident that affects the Payments API.
+
+Clara

@@ -1,0 +1,82 @@
+From ef176ecb2cc14ee166f78e883d6548636a0f2831 Mon Sep 17 00:00:00 2001
+From: Reconstruction <reconstruction@cloudflare-2019.example>
+Date: Tue, 2 Jul 2019 14:30:00 +0000
+Subject: [PATCH] Restore the per-rule CPU budget and profile every rule in the
+ tests
+
+Brings back the windowed scan with a CPU budget that PR-701 removed, so a rule that backtracks is skipped instead of holding a core.
+
+Regression test: tests/test_rule_cpu.py runs every rule against worst-case bodies.
+---
+ tests/test_rule_cpu.py | 15 +++++++++++++++
+ waf/engine.py          | 32 ++++++++++++++++++++++++++++----
+ 2 files changed, 43 insertions(+), 4 deletions(-)
+ create mode 100644 tests/test_rule_cpu.py
+
+diff --git a/tests/test_rule_cpu.py b/tests/test_rule_cpu.py
+new file mode 100644
+index 0000000..21f819a
+--- /dev/null
++++ b/tests/test_rule_cpu.py
+@@ -0,0 +1,15 @@
++import time
++import unittest
++
++from waf.engine import CPU_BUDGET_MS, inspect
++
++WORST_CASE_BODIES = ["1" * 4000, "x=" + "x" * 4000, "'" * 2000]
++SLACK_MS = 400
++
++
++class RuleCpuTest(unittest.TestCase):
++    def test_no_request_body_holds_a_core_past_the_budget(self):
++        for body in WORST_CASE_BODIES:
++            started = time.monotonic()
++            inspect(body)
++            self.assertLess((time.monotonic() - started) * 1000, CPU_BUDGET_MS + SLACK_MS)
+diff --git a/waf/engine.py b/waf/engine.py
+index 423295b..7909456 100644
+--- a/waf/engine.py
++++ b/waf/engine.py
+@@ -1,10 +1,34 @@
++import time
++
+ from waf.rules import RULES, Rule
+ 
++WINDOW = 128
++OVERLAP = 64
++CPU_BUDGET_MS = 50
++
++
++class RuleBudgetExceeded(Exception):
++    pass
++
+ 
+-def run_rule(rule: Rule, body: str) -> bool:
+-    return rule.pattern.search(body) is not None
++def run_rule(rule: Rule, body: str, budget_ms: int = CPU_BUDGET_MS) -> bool:
++    """Scans the body a window at a time, so one rule can never hold a CPU core past its budget."""
++    deadline = time.monotonic() + budget_ms / 1000
++    for start in range(0, max(len(body), 1), WINDOW):
++        if rule.pattern.search(body, start, start + WINDOW + OVERLAP):
++            return True
++        if time.monotonic() > deadline:
++            raise RuleBudgetExceeded(rule.id)
++    return False
+ 
+ 
+ def inspect(body: str) -> list[str]:
+-    """Ids of the managed rules a request body matches."""
+-    return [rule.id for rule in RULES if run_rule(rule, body)]
++    """Ids of the managed rules a request body matches. A rule that runs out of budget is skipped, not waited for."""
++    matched = []
++    for rule in RULES:
++        try:
++            if run_rule(rule, body):
++                matched.append(rule.id)
++        except RuleBudgetExceeded:
++            continue
++    return matched
+-- 
+2.53.0
+

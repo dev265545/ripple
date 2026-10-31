@@ -1,0 +1,138 @@
+From 2d8d34061349ff2a44ab0e7acb9217e11f86b37d Mon Sep 17 00:00:00 2001
+From: Ravi Menon <ravi@northwindpay.example>
+Date: Thu, 12 Mar 2026 10:00:00 +0000
+Subject: [PATCH 1/2] Initial payments-core service
+
+---
+ .gitignore            |  1 +
+ loadcheck.py          | 13 +++++++++++++
+ payments/__init__.py  |  0
+ payments/charges.py   | 15 +++++++++++++++
+ payments/config.py    |  3 +++
+ payments/pool.py      | 16 ++++++++++++++++
+ tests/__init__.py     |  0
+ tests/test_charges.py | 21 +++++++++++++++++++++
+ 8 files changed, 69 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 loadcheck.py
+ create mode 100644 payments/__init__.py
+ create mode 100644 payments/charges.py
+ create mode 100644 payments/config.py
+ create mode 100644 payments/pool.py
+ create mode 100644 tests/__init__.py
+ create mode 100644 tests/test_charges.py
+
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+index 0000000..c18dd8d
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1 @@
++__pycache__/
+diff --git a/loadcheck.py b/loadcheck.py
+new file mode 100644
+index 0000000..af73f92
+--- /dev/null
++++ b/loadcheck.py
+@@ -0,0 +1,13 @@
++import sys
++
++from payments.charges import serve_burst
++from payments.config import LEDGER_POOL_SIZE
++from payments.pool import Pool
++
++PEAK_CHARGES_PER_POD = 60
++MAX_ERROR_RATE = 0.01
++
++result = serve_burst(Pool(LEDGER_POOL_SIZE), PEAK_CHARGES_PER_POD)
++error_rate = result["failed"] / PEAK_CHARGES_PER_POD
++print(f"peak burst of {PEAK_CHARGES_PER_POD} charges per pod: {result['served']} served, {result['failed']} failed, error rate {error_rate:.0%}")
++sys.exit(1 if error_rate > MAX_ERROR_RATE else 0)
+diff --git a/payments/__init__.py b/payments/__init__.py
+new file mode 100644
+index 0000000..e69de29
+diff --git a/payments/charges.py b/payments/charges.py
+new file mode 100644
+index 0000000..e36e036
+--- /dev/null
++++ b/payments/charges.py
+@@ -0,0 +1,15 @@
++from payments.pool import Pool, PoolExhausted
++
++
++def serve_burst(pool: Pool, charges: int) -> dict[str, int]:
++    """Charges arriving in the same instant; each holds one ledger connection until it completes."""
++    served = failed = 0
++    for _ in range(charges):
++        try:
++            pool.acquire()
++            served += 1
++        except PoolExhausted:
++            failed += 1
++    for _ in range(served):
++        pool.release()
++    return {"served": served, "failed": failed}
+diff --git a/payments/config.py b/payments/config.py
+new file mode 100644
+index 0000000..3ab508f
+--- /dev/null
++++ b/payments/config.py
+@@ -0,0 +1,3 @@
++LEDGER_POOL_SIZE = 100
++PODS = 4
++LEDGER_MAX_CONNECTIONS = 100
+diff --git a/payments/pool.py b/payments/pool.py
+new file mode 100644
+index 0000000..1b62eeb
+--- /dev/null
++++ b/payments/pool.py
+@@ -0,0 +1,16 @@
++class PoolExhausted(Exception):
++    pass
++
++
++class Pool:
++    def __init__(self, size: int) -> None:
++        self.size = size
++        self.in_use = 0
++
++    def acquire(self) -> None:
++        if self.in_use >= self.size:
++            raise PoolExhausted(f"all {self.size} ledger connections are in use")
++        self.in_use += 1
++
++    def release(self) -> None:
++        self.in_use -= 1
+diff --git a/tests/__init__.py b/tests/__init__.py
+new file mode 100644
+index 0000000..e69de29
+diff --git a/tests/test_charges.py b/tests/test_charges.py
+new file mode 100644
+index 0000000..152cbd6
+--- /dev/null
++++ b/tests/test_charges.py
+@@ -0,0 +1,21 @@
++import unittest
++
++from payments.charges import serve_burst
++from payments.pool import Pool, PoolExhausted
++
++
++class ChargesTest(unittest.TestCase):
++    def test_pool_refuses_when_every_connection_is_in_use(self):
++        pool = Pool(2)
++        pool.acquire()
++        pool.acquire()
++        with self.assertRaises(PoolExhausted):
++            pool.acquire()
++
++    def test_burst_within_pool_size_is_fully_served(self):
++        self.assertEqual(serve_burst(Pool(10), 8), {"served": 8, "failed": 0})
++
++    def test_connections_are_returned_after_a_burst(self):
++        pool = Pool(10)
++        serve_burst(pool, 8)
++        self.assertEqual(pool.in_use, 0)
+-- 
+2.53.0
+

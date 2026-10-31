@@ -1,0 +1,66 @@
+{
+ "id": "ADR-5",
+ "type": "adr",
+ "title": "ADR-5: Fraud scoring is synchronous with a 300 ms timeout",
+ "nodes": [
+  {
+   "label": "Decision",
+   "id": "ADR-5",
+   "props": {
+    "title": "Fraud scoring is synchronous with a 300 ms timeout",
+    "status": "accepted",
+    "decided_at": "2026-04-22",
+    "risk": "A slow fraud-scorer adds at most 300 ms to a charge."
+   },
+   "quote": "payments-core calls fraud-scorer synchronously and fails open after 300 ms."
+  }
+ ],
+ "links": [
+  {
+   "from": [
+    "Person",
+    "name:Ravi Menon"
+   ],
+   "type": "DECIDED",
+   "to": [
+    "Decision",
+    "ADR-5"
+   ],
+   "quote": "Deciders: Ravi Menon"
+  },
+  {
+   "from": [
+    "Decision",
+    "ADR-5"
+   ],
+   "type": "GOVERNS",
+   "to": [
+    "Service",
+    "payments-core"
+   ],
+   "quote": "payments-core calls fraud-scorer synchronously and fails open after 300 ms."
+  },
+  {
+   "from": [
+    "Decision",
+    "ADR-5"
+   ],
+   "type": "GOVERNS",
+   "to": [
+    "Service",
+    "fraud-scorer"
+   ],
+   "quote": "payments-core calls fraud-scorer synchronously and fails open after 300 ms."
+  }
+ ],
+ "mentions": [
+  [
+   "Service",
+   "payments-core"
+  ],
+  [
+   "Service",
+   "fraud-scorer"
+  ]
+ ]
+}

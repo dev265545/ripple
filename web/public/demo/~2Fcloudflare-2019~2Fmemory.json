@@ -1,0 +1,1 @@
+{"playbooks":[],"facts":[],"notes":[],"investigations":[{"id":"INV-1","incident":"INC-1","title":"Synthetic WAF check failing from outside the network; 502 errors and CPU exhaustion reported worldwide","incident_status":"open","status":"awaiting_approval","steps":24,"root":"PR-742","playbook":null,"started_at":"2019-07-02T13:45:00Z"}]}

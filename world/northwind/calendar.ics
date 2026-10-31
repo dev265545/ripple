@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Northwind Pay//Shared Calendar//EN
+BEGIN:VEVENT
+UID:evt-larkspur-festive-sale
+SUMMARY:Larkspur Retail Festive Mega Sale
+DTSTART:20261003T000000Z
+DTEND:20261006T235900Z
+CATEGORIES:customer:larkspur
+END:VEVENT
+BEGIN:VEVENT
+UID:evt-payments-change-freeze
+SUMMARY:Payments change freeze (festive peak)
+DTSTART:20261005T000000Z
+DTEND:20261007T235900Z
+CATEGORIES:change-freeze
+END:VEVENT
+BEGIN:VEVENT
+UID:evt-bluepeak-winter-launch
+SUMMARY:Bluepeak Travel winter fares launch
+DTSTART:20261012T060000Z
+DTEND:20261012T180000Z
+CATEGORIES:customer:bluepeak
+END:VEVENT
+END:VCALENDAR

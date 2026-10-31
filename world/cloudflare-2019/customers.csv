@@ -1,0 +1,14 @@
+id,name,domain,plan,monthly_revenue_usd,account_manager,features,reported_by,source_url
+business-plan,Business plan customers,cloudflare.com/business-sla,business,200,Customer Support (team inbox),CDN and proxy;WAF Managed Rules;Dashboard and API,Cloudflare Business SLA,https://web.archive.org/web/20190721090147/https://www.cloudflare.com/business-sla/
+all-customers,All Cloudflare customers,cloudflare.com,every plan,,Customer Support (team inbox),CDN and proxy;Dashboard and API,Cloudflare postmortem,https://blog.cloudflare.com/details-of-the-cloudflare-outage-on-july-2-2019/
+discord,Discord,discord.com,not public,,Customer Support (team inbox),CDN and proxy,The Verge; BBC,https://www.theverge.com/2019/7/2/20678958/downdetector-down-cloudflare-502-gateway-error-discord-outage
+downdetector,Downdetector,downdetector.com,not public,,Customer Support (team inbox),CDN and proxy,The Verge; BBC,https://www.theverge.com/2019/7/2/20678958/downdetector-down-cloudflare-502-gateway-error-discord-outage
+okcupid,OKCupid,okcupid.com,not public,,Customer Support (team inbox),CDN and proxy,The Verge; BBC,https://www.theverge.com/2019/7/2/20678958/downdetector-down-cloudflare-502-gateway-error-discord-outage
+peloton,Peloton,onepeloton.com,not public,,Customer Support (team inbox),CDN and proxy,The Verge,https://www.theverge.com/2019/7/2/20678958/downdetector-down-cloudflare-502-gateway-error-discord-outage
+feedly,Feedly,feedly.com,not public,,Customer Support (team inbox),CDN and proxy,The Verge,https://www.theverge.com/2019/7/2/20678958/downdetector-down-cloudflare-502-gateway-error-discord-outage
+coindesk,CoinDesk,coindesk.com,not public,,Customer Support (team inbox),CDN and proxy,The Verge,https://www.theverge.com/2019/7/2/20678958/downdetector-down-cloudflare-502-gateway-error-discord-outage
+flightradar24,Flightradar24,flightradar24.com,not public,,Customer Support (team inbox),CDN and proxy,BBC,https://www.bbc.com/news/technology-48841815
+socialblade,Social Blade,socialblade.com,not public,,Customer Support (team inbox),CDN and proxy,BBC,https://www.bbc.com/news/technology-48841815
+digitalocean,DigitalOcean,digitalocean.com,not public,,Customer Support (team inbox),CDN and proxy,Data Center Dynamics,https://www.datacenterdynamics.com/en/news/cloudflare-goes-down-outage-caused-network-performance-issues/
+marketo,Marketo,marketo.com,not public,,Customer Support (team inbox),CDN and proxy,Data Center Dynamics,https://www.datacenterdynamics.com/en/news/cloudflare-goes-down-outage-caused-network-performance-issues/
+theregister,The Register,theregister.com,not public,,Customer Support (team inbox),CDN and proxy,The Register,https://www.theregister.com/2019/07/02/cloudflare_down/

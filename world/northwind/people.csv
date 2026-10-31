@@ -1,0 +1,14 @@
+id,name,email,git_handle,team,role,manager
+elena,Elena Voss,elena@northwindpay.example,elenav,Leadership,CTO,
+ravi,Ravi Menon,ravi@northwindpay.example,ravim,Payments,Engineering Lead,elena
+asha,Asha Rao,asha@northwindpay.example,asharao,Payments,Senior Engineer,ravi
+diego,Diego Santos,diego@northwindpay.example,dsantos,Payments,Engineer,ravi
+mei,Mei Tanaka,mei@northwindpay.example,meit,Checkout,Engineering Lead,elena
+omar,Omar Haddad,omar@northwindpay.example,ohaddad,Checkout,Engineer,mei
+tomas,Tomas Novak,tomas@northwindpay.example,tnovak,Platform,Engineering Lead,elena
+lena,Lena Fischer,lena@northwindpay.example,lenaf,Platform,Senior Engineer,tomas
+priya,Priya Nair,priya@northwindpay.example,priyan,Merchant,Engineering Lead,elena
+jonas,Jonas Berg,jonas@northwindpay.example,jberg,Merchant,Engineer,priya
+sofia,Sofia Marin,sofia@northwindpay.example,,Customer Success,Head of Customer Success,elena
+nikhil,Nikhil Shah,nikhil@northwindpay.example,,Customer Success,Account Manager,sofia
+clara,Clara Jensen,clara@northwindpay.example,,Customer Success,Account Manager,sofia

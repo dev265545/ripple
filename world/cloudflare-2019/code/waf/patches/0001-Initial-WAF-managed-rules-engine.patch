@@ -1,0 +1,143 @@
+From 05034a1b9593fde908a4af25c24424f3cd2ab5ad Mon Sep 17 00:00:00 2001
+From: Reconstruction <reconstruction@cloudflare-2019.example>
+Date: Sat, 1 Jun 2019 09:00:00 +0000
+Subject: [PATCH 1/3] Initial WAF managed rules engine
+
+---
+ .gitignore           |  1 +
+ loadcheck.py         | 20 ++++++++++++++++++++
+ tests/__init__.py    |  0
+ tests/test_engine.py | 12 ++++++++++++
+ waf/__init__.py      |  0
+ waf/engine.py        | 34 ++++++++++++++++++++++++++++++++++
+ waf/rules.py         | 15 +++++++++++++++
+ 7 files changed, 82 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 loadcheck.py
+ create mode 100644 tests/__init__.py
+ create mode 100644 tests/test_engine.py
+ create mode 100644 waf/__init__.py
+ create mode 100644 waf/engine.py
+ create mode 100644 waf/rules.py
+
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+index 0000000..c18dd8d
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1 @@
++__pycache__/
+diff --git a/loadcheck.py b/loadcheck.py
+new file mode 100644
+index 0000000..bda80cd
+--- /dev/null
++++ b/loadcheck.py
+@@ -0,0 +1,20 @@
++import subprocess
++import sys
++import time
++
++from waf.engine import inspect
++
++LIMIT_SECONDS = 1.0
++WORST_CASE_BODY = "1" * 4000
++
++if "--inspect" in sys.argv:
++    inspect(WORST_CASE_BODY)
++    sys.exit(0)
++
++started = time.monotonic()
++try:
++    subprocess.run([sys.executable, __file__, "--inspect"], timeout=LIMIT_SECONDS, check=True)
++except subprocess.TimeoutExpired:
++    print(f"one {len(WORST_CASE_BODY)}-character request body held a CPU core in the WAF for over {LIMIT_SECONDS:.0f}s; every request behind it waits")
++    sys.exit(1)
++print(f"worst-case {len(WORST_CASE_BODY)}-character request body inspected in {(time.monotonic() - started) * 1000:.0f} ms")
+diff --git a/tests/__init__.py b/tests/__init__.py
+new file mode 100644
+index 0000000..e69de29
+diff --git a/tests/test_engine.py b/tests/test_engine.py
+new file mode 100644
+index 0000000..698c3ae
+--- /dev/null
++++ b/tests/test_engine.py
+@@ -0,0 +1,12 @@
++import unittest
++
++from waf.engine import inspect
++
++
++class EngineTest(unittest.TestCase):
++    def test_known_attacks_are_matched(self):
++        self.assertEqual(inspect("id=1 UNION SELECT password FROM users"), ["100001"])
++        self.assertEqual(inspect("file=../../etc/passwd"), ["100002"])
++
++    def test_ordinary_requests_pass(self):
++        self.assertEqual(inspect("name=Ada&city=London"), [])
+diff --git a/waf/__init__.py b/waf/__init__.py
+new file mode 100644
+index 0000000..e69de29
+diff --git a/waf/engine.py b/waf/engine.py
+new file mode 100644
+index 0000000..7909456
+--- /dev/null
++++ b/waf/engine.py
+@@ -0,0 +1,34 @@
++import time
++
++from waf.rules import RULES, Rule
++
++WINDOW = 128
++OVERLAP = 64
++CPU_BUDGET_MS = 50
++
++
++class RuleBudgetExceeded(Exception):
++    pass
++
++
++def run_rule(rule: Rule, body: str, budget_ms: int = CPU_BUDGET_MS) -> bool:
++    """Scans the body a window at a time, so one rule can never hold a CPU core past its budget."""
++    deadline = time.monotonic() + budget_ms / 1000
++    for start in range(0, max(len(body), 1), WINDOW):
++        if rule.pattern.search(body, start, start + WINDOW + OVERLAP):
++            return True
++        if time.monotonic() > deadline:
++            raise RuleBudgetExceeded(rule.id)
++    return False
++
++
++def inspect(body: str) -> list[str]:
++    """Ids of the managed rules a request body matches. A rule that runs out of budget is skipped, not waited for."""
++    matched = []
++    for rule in RULES:
++        try:
++            if run_rule(rule, body):
++                matched.append(rule.id)
++        except RuleBudgetExceeded:
++            continue
++    return matched
+diff --git a/waf/rules.py b/waf/rules.py
+new file mode 100644
+index 0000000..341ab94
+--- /dev/null
++++ b/waf/rules.py
+@@ -0,0 +1,15 @@
++import re
++from dataclasses import dataclass
++
++
++@dataclass(frozen=True)
++class Rule:
++    id: str
++    description: str
++    pattern: re.Pattern
++
++
++SQL_UNION = Rule("100001", "SQL injection: UNION SELECT", re.compile(r"(?i)union\s+select"))
++PATH_TRAVERSAL = Rule("100002", "Path traversal", re.compile(r"\.\./\.\./"))
++
++RULES = [SQL_UNION, PATH_TRAVERSAL]
+-- 
+2.53.0
+

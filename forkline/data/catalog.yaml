@@ -1,0 +1,79 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata: {name: redis, description: Redis server}
+spec: {type: external-api, owner: Platform}
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata: {name: graphblas, description: GraphBLAS}
+spec: {type: external-api, owner: Platform}
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata: {name: redisearch, description: RediSearch}
+spec: {type: external-api, owner: Platform}
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata: {name: object-storage, description: Object storage}
+spec: {type: external-api, owner: Platform}
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata: {name: cloud-provider, description: Cloud provider}
+spec: {type: external-api, owner: Platform}
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata: {name: github, description: GitHub}
+spec: {type: external-api, owner: Platform}
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: {"name": "FalkorDB", "description": "The database as customers run it", "annotations": {"forkline/tier": "1"}}
+spec: {"type": "service", "owner": "Storage", "dependsOn": ["component:module"]}
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: {"name": "module", "description": "Redis module that receives every command", "annotations": {"forkline/tier": "1", "forkline/paths": "FalkorDB/src/commands"}}
+spec: {"type": "service", "owner": "Storage", "dependsOn": ["component:parser", "component:planner", "component:runtime", "component:persistence", "resource:redis"]}
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: {"name": "parser", "description": "Turns Cypher text into a syntax tree", "annotations": {"forkline/tier": "1", "forkline/paths": "FalkorDB/graph/src/parser"}}
+spec: {"type": "library", "owner": "Query", "dependsOn": []}
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: {"name": "planner", "description": "Chooses how a query is run", "annotations": {"forkline/tier": "1", "forkline/paths": "FalkorDB/graph/src/planner"}}
+spec: {"type": "library", "owner": "Query", "dependsOn": ["component:parser", "component:index"]}
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: {"name": "runtime", "description": "Runs a planned query, functions and procedures", "annotations": {"forkline/tier": "1", "forkline/paths": "FalkorDB/graph/src/runtime, FalkorDB/graph/src/udf"}}
+spec: {"type": "library", "owner": "Query", "dependsOn": ["component:storage", "component:index"]}
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: {"name": "storage", "description": "Nodes, relationships and the matrices that hold them", "annotations": {"forkline/tier": "1", "forkline/paths": "FalkorDB/graph/src/storage, FalkorDB/graph/src/graph, FalkorDB/graph/src/effects"}}
+spec: {"type": "library", "owner": "Storage", "dependsOn": ["component:native-deps"]}
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: {"name": "index", "description": "Range, full-text and vector indexes", "annotations": {"forkline/tier": "1", "forkline/paths": "FalkorDB/graph/src/index"}}
+spec: {"type": "library", "owner": "Indexing", "dependsOn": ["component:native-deps", "resource:redisearch"]}
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: {"name": "persistence", "description": "Snapshots, loading and replication records", "annotations": {"forkline/tier": "1", "forkline/paths": "FalkorDB/src/serializers"}}
+spec: {"type": "library", "owner": "Storage", "dependsOn": ["component:storage", "resource:object-storage"]}
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: {"name": "native-deps", "description": "Bundled native libraries", "annotations": {"forkline/tier": "2", "forkline/paths": "FalkorDB/native-deps, FalkorDB/deps"}}
+spec: {"type": "library", "owner": "Indexing", "dependsOn": ["resource:graphblas"]}
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: {"name": "packaging", "description": "Images and release builds", "annotations": {"forkline/tier": "2", "forkline/paths": "FalkorDB/build, FalkorDB/.github"}}
+spec: {"type": "service", "owner": "Cloud", "dependsOn": ["resource:cloud-provider", "resource:github"]}

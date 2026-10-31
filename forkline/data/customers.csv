@@ -1,0 +1,37 @@
+id,name,domain,plan,monthly_revenue_usd,account_manager,features
+harbor,Harbor Analytics,harboranalytics.example,enterprise,46000,Anya Sokolova,Backups and restore;Bulk import;Full-text search;Range indexes;User-defined functions
+quill,Quill Robotics,quillrobotics.example,enterprise,58000,Ben Achterberg,Bulk import;Full-text search;Slow query log;User-defined functions;Vector search
+cinder,Cinder Health,cinderhealth.example,enterprise,52000,Chloe Martin,Bulk import;Cypher queries;Managed clusters;Replication;Slow query log
+juniper,Juniper Logistics,juniperlogistics.example,enterprise,59000,Anya Sokolova,Cypher queries;Full-text search;Managed clusters;Slow query log;User-defined functions
+atlas,Atlas Bank,atlasbank.example,enterprise,33000,Ben Achterberg,Backups and restore;Bulk import;Full-text search;Replication;User-defined functions
+meridian,Meridian Games,meridiangames.example,enterprise,32000,Chloe Martin,Bulk import;Cypher queries;Full-text search;Range indexes;Replication
+saffron,Saffron Labs,saffronlabs.example,enterprise,44000,Anya Sokolova,Backups and restore;Full-text search;Managed clusters;Replication;User-defined functions
+tidewater,Tidewater Energy,tidewaterenergy.example,enterprise,36000,Ben Achterberg,Cypher queries;Full-text search;Managed clusters;User-defined functions;Vector search
+brightwell,Brightwell Freight,brightwellfreight.example,enterprise,22000,Chloe Martin,Bulk import;Cypher queries;Range indexes;Slow query log;User-defined functions
+corvid,Corvid Media,corvidmedia.example,enterprise,43000,Anya Sokolova,Backups and restore;Cypher queries;Range indexes;User-defined functions;Vector search
+lumen,Lumen Insurance,lumeninsurance.example,team,2000,Ben Achterberg,Full-text search;Range indexes;Vector search
+pinecrest,Pinecrest Systems,pinecrestsystems.example,team,2000,Chloe Martin,Bulk import;Range indexes;Vector search
+vantage,Vantage Analytics,vantageanalytics.example,team,3000,Anya Sokolova,Managed clusters;Slow query log;Vector search
+orchard,Orchard Robotics,orchardrobotics.example,team,5000,Ben Achterberg,Backups and restore;Cypher queries;Slow query log
+kestrel,Kestrel Health,kestrelhealth.example,team,3000,Chloe Martin,Cypher queries;Full-text search;User-defined functions
+marlow,Marlow Logistics,marlowlogistics.example,team,5000,Anya Sokolova,Backups and restore;Cypher queries;Replication
+sable,Sable Bank,sablebank.example,team,2000,Ben Achterberg,Cypher queries;Range indexes;User-defined functions
+fennel,Fennel Games,fennelgames.example,team,4000,Chloe Martin,Bulk import;User-defined functions;Vector search
+ironbark,Ironbark Labs,ironbarklabs.example,team,8000,Anya Sokolova,Backups and restore;User-defined functions;Vector search
+halcyon,Halcyon Energy,halcyonenergy.example,team,3000,Ben Achterberg,Range indexes;User-defined functions;Vector search
+thistle,Thistle Freight,thistlefreight.example,team,6000,Chloe Martin,Cypher queries;Full-text search;Managed clusters
+cobalt,Cobalt Media,cobaltmedia.example,team,6000,Anya Sokolova,Backups and restore;Managed clusters;Range indexes
+wren,Wren Insurance,wreninsurance.example,team,5000,Ben Achterberg,Full-text search;Slow query log;Vector search
+larch,Larch Systems,larchsystems.example,team,5000,Chloe Martin,Backups and restore;Full-text search;User-defined functions
+solstice,Solstice Analytics,solsticeanalytics.example,starter,200,Anya Sokolova,Backups and restore;Full-text search
+garnet,Garnet Robotics,garnetrobotics.example,starter,200,Ben Achterberg,Cypher queries;Vector search
+drift,Drift Health,drifthealth.example,starter,600,Chloe Martin,Full-text search;Vector search
+ember,Ember Logistics,emberlogistics.example,starter,400,Anya Sokolova,Slow query log;Vector search
+nimbus,Nimbus Bank,nimbusbank.example,starter,500,Ben Achterberg,Backups and restore;Replication
+osprey,Osprey Games,ospreygames.example,starter,700,Chloe Martin,Bulk import;Full-text search
+peregrine,Peregrine Labs,peregrinelabs.example,starter,300,Anya Sokolova,Full-text search;User-defined functions
+sorrel,Sorrel Energy,sorrelenergy.example,starter,700,Ben Achterberg,Cypher queries;Vector search
+tamarack,Tamarack Freight,tamarackfreight.example,starter,700,Chloe Martin,Bulk import;Full-text search
+umber,Umber Media,umbermedia.example,starter,500,Anya Sokolova,Cypher queries;User-defined functions
+verity,Verity Insurance,verityinsurance.example,starter,600,Ben Achterberg,Cypher queries;Full-text search
+willow,Willow Systems,willowsystems.example,starter,200,Chloe Martin,Backups and restore;Managed clusters

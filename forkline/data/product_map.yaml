@@ -1,0 +1,80 @@
+{
+ "products": [
+  {
+   "name": "Forkline Graph Cloud",
+   "features": [
+    {
+     "name": "Cypher queries",
+     "served_by": [
+      "parser",
+      "planner",
+      "runtime"
+     ]
+    },
+    {
+     "name": "Full-text search",
+     "served_by": [
+      "index"
+     ]
+    },
+    {
+     "name": "Vector search",
+     "served_by": [
+      "index",
+      "native-deps"
+     ]
+    },
+    {
+     "name": "Range indexes",
+     "served_by": [
+      "index"
+     ]
+    },
+    {
+     "name": "Backups and restore",
+     "served_by": [
+      "persistence"
+     ]
+    },
+    {
+     "name": "Replication",
+     "served_by": [
+      "persistence",
+      "storage"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Forkline Platform",
+   "features": [
+    {
+     "name": "Managed clusters",
+     "served_by": [
+      "packaging",
+      "module"
+     ]
+    },
+    {
+     "name": "Bulk import",
+     "served_by": [
+      "module",
+      "storage"
+     ]
+    },
+    {
+     "name": "Slow query log",
+     "served_by": [
+      "module"
+     ]
+    },
+    {
+     "name": "User-defined functions",
+     "served_by": [
+      "runtime"
+     ]
+    }
+   ]
+  }
+ ]
+}

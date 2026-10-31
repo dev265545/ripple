@@ -1,0 +1,31 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+UID:EVT-harbor
+SUMMARY:Harbor Analytics moves its fraud graph to production
+CATEGORIES:customer:harbor
+DTSTART:20261012T080000Z
+DTEND:20261015T180000Z
+END:VEVENT
+BEGIN:VEVENT
+UID:EVT-juniper
+SUMMARY:Juniper Logistics quarterly release freeze
+CATEGORIES:customer:juniper
+DTSTART:20261014T080000Z
+DTEND:20261017T180000Z
+END:VEVENT
+BEGIN:VEVENT
+UID:EVT-saffron
+SUMMARY:Saffron Labs launch week for its recommendations service
+CATEGORIES:customer:saffron
+DTSTART:20261011T080000Z
+DTEND:20261014T180000Z
+END:VEVENT
+BEGIN:VEVENT
+UID:EVT-brightwell
+SUMMARY:Brightwell Freight board demo of its knowledge graph assistant
+CATEGORIES:customer:brightwell
+DTSTART:20261016T080000Z
+DTEND:20261019T180000Z
+END:VEVENT
+END:VCALENDAR

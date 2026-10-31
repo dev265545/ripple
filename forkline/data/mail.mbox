@@ -1,0 +1,832 @@
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m001@forkline.example>
+From: Tara Whitlock <tara@harboranalytics.example>
+To: Anya Sokolova <anya@forkline.example>
+Subject: Backups and restore before our launch
+Date: Thu, 24 Sep 2026 09:00:00 +0000
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi Anya,
+
+We put Backups and restore in front of our own customers next week. The last =
+outage cost us half a day.
+Can you promise it will stay up?
+
+Tara
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m002@forkline.example>
+From: Anya Sokolova <anya@forkline.example>
+To: Tara Whitlock <tara@harboranalytics.example>
+Subject: Re: Backups and restore before our launch
+Date: Thu, 24 Sep 2026 11:20:00 +0000
+In-Reply-To: <m001@forkline.example>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi Tara,
+
+We commit to zero unplanned downtime on Backups and restore for Harbor Analyt=
+ics through 24 October.
+If anything goes wrong I will call you personally within 15 minutes.
+
+Anya Sokolova
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m003@forkline.example>
+From: Marcus Bell <marcus@quillrobotics.example>
+To: Ben Achterberg <ben@forkline.example>
+Subject: Yesterday's trouble with Bulk import
+Date: Fri, 25 Sep 2026 08:30:00 +0000
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi Ben,
+
+Bulk import stopped answering for about forty minutes yesterday afternoon and=
+ nobody told us.
+We need to understand what happened.
+
+Marcus
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m004@forkline.example>
+From: Ben Achterberg <ben@forkline.example>
+To: Marcus Bell <marcus@quillrobotics.example>
+Subject: Re: Yesterday's trouble with Bulk import
+Date: Fri, 25 Sep 2026 10:05:00 +0000
+In-Reply-To: <m003@forkline.example>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi Marcus,
+
+I am sorry. We will send Quill Robotics a written root cause report within tw=
+o business days of any outage.
+We will also credit this month's invoice by 10%.
+
+Ben Achterberg
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m005@forkline.example>
+From: Marcus Bell <marcus@quillrobotics.example>
+To: Ben Achterberg <ben@forkline.example>
+Subject: Re: Yesterday's trouble with Bulk import
+Date: Fri, 25 Sep 2026 13:00:00 +0000
+In-Reply-To: <m004@forkline.example>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+
+Thank you. Please make sure the report covers Bulk import specifically.
+
+Marcus
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m006@forkline.example>
+From: Nora Quinn <nora@cinderhealth.example>
+To: Yusuf Demir <yusuf@forkline.example>
+Subject: Private network access and audit logs
+Date: Sat, 26 Sep 2026 14:00:00 +0000
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi Yusuf,
+
+Our security team will not approve production use without private network acc=
+ess. We also need audit logs of every query.
+Is either on your roadmap?
+
+Nora
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m007@forkline.example>
+From: Yusuf Demir <yusuf@forkline.example>
+To:
+ Nora Quinn <nora@cinderhealth.example>, Chloe Martin <chloe@forkline.example>
+Subject: Re: Private network access and audit logs
+Date: Sat, 26 Sep 2026 16:40:00 +0000
+In-Reply-To: <m006@forkline.example>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi Nora,
+
+Private network access is planned and we are looking into audit logs in modul=
+e. I cannot give a date for either yet.
+Chloe Martin will keep you posted.
+
+Yusuf Demir
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m008@forkline.example>
+From: Daniel Osei <daniel@juniperlogistics.example>
+To: Anya Sokolova <anya@forkline.example>
+Subject: Cypher queries before our launch
+Date: Sun, 27 Sep 2026 09:00:00 +0000
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi Anya,
+
+We put Cypher queries in front of our own customers next week. The last outag=
+e cost us half a day.
+Can you promise it will stay up?
+
+Daniel
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m009@forkline.example>
+From: Anya Sokolova <anya@forkline.example>
+To: Daniel Osei <daniel@juniperlogistics.example>
+Subject: Re: Cypher queries before our launch
+Date: Sun, 27 Sep 2026 11:20:00 +0000
+In-Reply-To: <m008@forkline.example>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi Daniel,
+
+We commit to zero unplanned downtime on Cypher queries for Juniper Logistics =
+through 24 October.
+If anything goes wrong I will call you personally within 15 minutes.
+
+Anya Sokolova
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m010@forkline.example>
+From: Hugo Mertens <hugo@atlasbank.example>
+To: Ben Achterberg <ben@forkline.example>
+Subject: Yesterday's trouble with Backups and restore
+Date: Mon, 28 Sep 2026 08:30:00 +0000
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi Ben,
+
+Backups and restore stopped answering for about forty minutes yesterday after=
+noon and nobody told us.
+We need to understand what happened.
+
+Hugo
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m011@forkline.example>
+From: Ben Achterberg <ben@forkline.example>
+To: Hugo Mertens <hugo@atlasbank.example>
+Subject: Re: Yesterday's trouble with Backups and restore
+Date: Mon, 28 Sep 2026 10:05:00 +0000
+In-Reply-To: <m010@forkline.example>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi Hugo,
+
+I am sorry. We will send Atlas Bank a written root cause report within two bu=
+siness days of any outage.
+We will also credit this month's invoice by 10%.
+
+Ben Achterberg
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m012@forkline.example>
+From: Hugo Mertens <hugo@atlasbank.example>
+To: Ben Achterberg <ben@forkline.example>
+Subject: Re: Yesterday's trouble with Backups and restore
+Date: Mon, 28 Sep 2026 13:00:00 +0000
+In-Reply-To: <m011@forkline.example>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Thank you. Please make sure the report covers Backups and restore specificall=
+y.
+
+Hugo
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m013@forkline.example>
+From: Rosa Vidal <rosa@meridiangames.example>
+To: Yusuf Demir <yusuf@forkline.example>
+Subject: Private network access and audit logs
+Date: Tue, 29 Sep 2026 14:00:00 +0000
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi Yusuf,
+
+Our security team will not approve production use without private network acc=
+ess. We also need audit logs of every query.
+Is either on your roadmap?
+
+Rosa
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m014@forkline.example>
+From: Yusuf Demir <yusuf@forkline.example>
+To: Rosa Vidal <rosa@meridiangames.example>,
+ Chloe Martin <chloe@forkline.example>
+Subject: Re: Private network access and audit logs
+Date: Tue, 29 Sep 2026 16:40:00 +0000
+In-Reply-To: <m013@forkline.example>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi Rosa,
+
+Private network access is planned and we are looking into audit logs in modul=
+e. I cannot give a date for either yet.
+Chloe Martin will keep you posted.
+
+Yusuf Demir
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m015@forkline.example>
+From: Hugo Mertens <hugo@saffronlabs.example>
+To: Anya Sokolova <anya@forkline.example>
+Subject: Backups and restore before our launch
+Date: Wed, 30 Sep 2026 09:00:00 +0000
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi Anya,
+
+We put Backups and restore in front of our own customers next week. The last =
+outage cost us half a day.
+Can you promise it will stay up?
+
+Hugo
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m016@forkline.example>
+From: Anya Sokolova <anya@forkline.example>
+To: Hugo Mertens <hugo@saffronlabs.example>
+Subject: Re: Backups and restore before our launch
+Date: Wed, 30 Sep 2026 11:20:00 +0000
+In-Reply-To: <m015@forkline.example>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi Hugo,
+
+We commit to zero unplanned downtime on Backups and restore for Saffron Labs =
+through 24 October.
+If anything goes wrong I will call you personally within 15 minutes.
+
+Anya Sokolova
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m017@forkline.example>
+From: Samira Aziz <samira@tidewaterenergy.example>
+To: Ben Achterberg <ben@forkline.example>
+Subject: Yesterday's trouble with Cypher queries
+Date: Thu, 01 Oct 2026 08:30:00 +0000
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi Ben,
+
+Cypher queries stopped answering for about forty minutes yesterday afternoon =
+and nobody told us.
+We need to understand what happened.
+
+Samira
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m018@forkline.example>
+From: Ben Achterberg <ben@forkline.example>
+To: Samira Aziz <samira@tidewaterenergy.example>
+Subject: Re: Yesterday's trouble with Cypher queries
+Date: Thu, 01 Oct 2026 10:05:00 +0000
+In-Reply-To: <m017@forkline.example>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi Samira,
+
+I am sorry. We will send Tidewater Energy a written root cause report within =
+two business days of any outage.
+We will also credit this month's invoice by 10%.
+
+Ben Achterberg
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m019@forkline.example>
+From: Samira Aziz <samira@tidewaterenergy.example>
+To: Ben Achterberg <ben@forkline.example>
+Subject: Re: Yesterday's trouble with Cypher queries
+Date: Thu, 01 Oct 2026 13:00:00 +0000
+In-Reply-To: <m018@forkline.example>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+
+Thank you. Please make sure the report covers Cypher queries specifically.
+
+Samira
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m020@forkline.example>
+From: Samira Aziz <samira@brightwellfreight.example>
+To: Yusuf Demir <yusuf@forkline.example>
+Subject: Private network access and audit logs
+Date: Fri, 02 Oct 2026 14:00:00 +0000
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi Yusuf,
+
+Our security team will not approve production use without private network acc=
+ess. We also need audit logs of every query.
+Is either on your roadmap?
+
+Samira
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m021@forkline.example>
+From: Yusuf Demir <yusuf@forkline.example>
+To: Samira Aziz <samira@brightwellfreight.example>,
+ Chloe Martin <chloe@forkline.example>
+Subject: Re: Private network access and audit logs
+Date: Fri, 02 Oct 2026 16:40:00 +0000
+In-Reply-To: <m020@forkline.example>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi Samira,
+
+Private network access is planned and we are looking into audit logs in modul=
+e. I cannot give a date for either yet.
+Chloe Martin will keep you posted.
+
+Yusuf Demir
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m022@forkline.example>
+From: Rosa Vidal <rosa@corvidmedia.example>
+To: Anya Sokolova <anya@forkline.example>
+Subject: Backups and restore before our launch
+Date: Sat, 03 Oct 2026 09:00:00 +0000
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi Anya,
+
+We put Backups and restore in front of our own customers next week. The last =
+outage cost us half a day.
+Can you promise it will stay up?
+
+Rosa
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m023@forkline.example>
+From: Anya Sokolova <anya@forkline.example>
+To: Rosa Vidal <rosa@corvidmedia.example>
+Subject: Re: Backups and restore before our launch
+Date: Sat, 03 Oct 2026 11:20:00 +0000
+In-Reply-To: <m022@forkline.example>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi Rosa,
+
+We commit to zero unplanned downtime on Backups and restore for Corvid Media =
+through 24 October.
+If anything goes wrong I will call you personally within 15 minutes.
+
+Anya Sokolova
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m024@forkline.example>
+From: Marcus Bell <marcus@lumeninsurance.example>
+To: Felix Aldana <felix@forkline.example>
+Subject: Security questionnaire
+Date: Sun, 20 Sep 2026 09:15:00 +0000
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hello,
+
+Attached is our vendor security questionnaire. We need it back before we rene=
+w.
+
+Marcus
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m025@forkline.example>
+From: Felix Aldana <felix@forkline.example>
+To: Marcus Bell <marcus@lumeninsurance.example>
+Subject: Re: Security questionnaire
+Date: Sun, 20 Sep 2026 12:00:00 +0000
+In-Reply-To: <m024@forkline.example>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+
+Hi Marcus,
+
+We will return the completed questionnaire to Lumen Insurance by 25 September.
+
+Felix Aldana
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m026@forkline.example>
+From: Tara Whitlock <tara@pinecrestsystems.example>
+To: Chloe Martin <chloe@forkline.example>
+Subject: Renewal pricing
+Date: Mon, 21 Sep 2026 10:00:00 +0000
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi Chloe,
+
+Our renewal is next month and the budget is tight. What can you do on price f=
+or Bulk import?
+
+Tara
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m027@forkline.example>
+From: Chloe Martin <chloe@forkline.example>
+To: Tara Whitlock <tara@pinecrestsystems.example>
+Subject: Re: Renewal pricing
+Date: Mon, 21 Sep 2026 15:30:00 +0000
+In-Reply-To: <m026@forkline.example>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi Tara,
+
+We will hold Pinecrest Systems's current price for another twelve months if y=
+ou renew before 11 October.
+
+Chloe Martin
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m028@forkline.example>
+From: Marcus Bell <marcus@vantageanalytics.example>
+To: Grace Oyelaran <grace@forkline.example>
+Subject: Managed clusters is slow on large graphs
+Date: Tue, 22 Sep 2026 11:00:00 +0000
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+
+Hello,
+
+Managed clusters takes over ten seconds on our largest graph since last week.
+Is this known?
+
+Marcus
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m029@forkline.example>
+From: Grace Oyelaran <grace@forkline.example>
+To: Marcus Bell <marcus@vantageanalytics.example>
+Subject: Re: Managed clusters is slow on large graphs
+Date: Tue, 22 Sep 2026 11:50:00 +0000
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi Marcus,
+
+Yes, it is known and the Query team is working on it in planner. I will write=
+ to you as soon as the fix ships.
+
+Grace Oyelaran
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m030@forkline.example>
+From: Ben Achterberg <ben@forkline.example>
+To: Aiko Tanaka <aiko@orchardrobotics.example>
+Subject: Your onboarding session
+Date: Wed, 23 Sep 2026 09:40:00 +0000
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi Aiko,
+
+Your onboarding session for Backups and restore is booked. We will give Orcha=
+rd Robotics three hours of hands-on training at no charge.
+
+Ben Achterberg
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m031@forkline.example>
+From: Elif Kaya <elif@kestrelhealth.example>
+To: Felix Aldana <felix@forkline.example>
+Subject: Security questionnaire
+Date: Thu, 24 Sep 2026 09:15:00 +0000
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hello,
+
+Attached is our vendor security questionnaire. We need it back before we rene=
+w.
+
+Elif
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m032@forkline.example>
+From: Felix Aldana <felix@forkline.example>
+To: Elif Kaya <elif@kestrelhealth.example>
+Subject: Re: Security questionnaire
+Date: Thu, 24 Sep 2026 12:00:00 +0000
+In-Reply-To: <m031@forkline.example>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+
+Hi Elif,
+
+We will return the completed questionnaire to Kestrel Health by 29 September.
+
+Felix Aldana
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m033@forkline.example>
+From: Samira Aziz <samira@marlowlogistics.example>
+To: Anya Sokolova <anya@forkline.example>
+Subject: Renewal pricing
+Date: Fri, 25 Sep 2026 10:00:00 +0000
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi Anya,
+
+Our renewal is next month and the budget is tight. What can you do on price f=
+or Backups and restore?
+
+Samira
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m034@forkline.example>
+From: Anya Sokolova <anya@forkline.example>
+To: Samira Aziz <samira@marlowlogistics.example>
+Subject: Re: Renewal pricing
+Date: Fri, 25 Sep 2026 15:30:00 +0000
+In-Reply-To: <m033@forkline.example>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi Samira,
+
+We will hold Marlow Logistics's current price for another twelve months if yo=
+u renew before 15 October.
+
+Anya Sokolova
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m035@forkline.example>
+From: Nora Quinn <nora@sablebank.example>
+To: Grace Oyelaran <grace@forkline.example>
+Subject: Cypher queries is slow on large graphs
+Date: Sat, 26 Sep 2026 11:00:00 +0000
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+
+Hello,
+
+Cypher queries takes over ten seconds on our largest graph since last week.
+Is this known?
+
+Nora
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m036@forkline.example>
+From: Grace Oyelaran <grace@forkline.example>
+To: Nora Quinn <nora@sablebank.example>
+Subject: Re: Cypher queries is slow on large graphs
+Date: Sat, 26 Sep 2026 11:50:00 +0000
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi Nora,
+
+Yes, it is known and the Query team is working on it in planner. I will write=
+ to you as soon as the fix ships.
+
+Grace Oyelaran
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m037@forkline.example>
+From: Chloe Martin <chloe@forkline.example>
+To: Nora Quinn <nora@fennelgames.example>
+Subject: Your onboarding session
+Date: Sun, 27 Sep 2026 09:40:00 +0000
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi Nora,
+
+Your onboarding session for Bulk import is booked. We will give Fennel Games =
+three hours of hands-on training at no charge.
+
+Chloe Martin
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m038@forkline.example>
+From: Daniel Osei <daniel@ironbarklabs.example>
+To: Felix Aldana <felix@forkline.example>
+Subject: Security questionnaire
+Date: Mon, 28 Sep 2026 09:15:00 +0000
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hello,
+
+Attached is our vendor security questionnaire. We need it back before we rene=
+w.
+
+Daniel
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m039@forkline.example>
+From: Felix Aldana <felix@forkline.example>
+To: Daniel Osei <daniel@ironbarklabs.example>
+Subject: Re: Security questionnaire
+Date: Mon, 28 Sep 2026 12:00:00 +0000
+In-Reply-To: <m038@forkline.example>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+
+Hi Daniel,
+
+We will return the completed questionnaire to Ironbark Labs by 03 October.
+
+Felix Aldana
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m040@forkline.example>
+From: Samira Aziz <samira@halcyonenergy.example>
+To: Ben Achterberg <ben@forkline.example>
+Subject: Renewal pricing
+Date: Tue, 29 Sep 2026 10:00:00 +0000
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi Ben,
+
+Our renewal is next month and the budget is tight. What can you do on price f=
+or Range indexes?
+
+Samira
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m041@forkline.example>
+From: Ben Achterberg <ben@forkline.example>
+To: Samira Aziz <samira@halcyonenergy.example>
+Subject: Re: Renewal pricing
+Date: Tue, 29 Sep 2026 15:30:00 +0000
+In-Reply-To: <m040@forkline.example>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi Samira,
+
+We will hold Halcyon Energy's current price for another twelve months if you =
+renew before 19 October.
+
+Ben Achterberg
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m042@forkline.example>
+From: Marcus Bell <marcus@thistlefreight.example>
+To: Grace Oyelaran <grace@forkline.example>
+Subject: Cypher queries is slow on large graphs
+Date: Wed, 30 Sep 2026 11:00:00 +0000
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+
+Hello,
+
+Cypher queries takes over ten seconds on our largest graph since last week.
+Is this known?
+
+Marcus
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m043@forkline.example>
+From: Grace Oyelaran <grace@forkline.example>
+To: Marcus Bell <marcus@thistlefreight.example>
+Subject: Re: Cypher queries is slow on large graphs
+Date: Wed, 30 Sep 2026 11:50:00 +0000
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi Marcus,
+
+Yes, it is known and the Query team is working on it in planner. I will write=
+ to you as soon as the fix ships.
+
+Grace Oyelaran
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m044@forkline.example>
+From: Anya Sokolova <anya@forkline.example>
+To: Samira Aziz <samira@cobaltmedia.example>
+Subject: Your onboarding session
+Date: Thu, 01 Oct 2026 09:40:00 +0000
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi Samira,
+
+Your onboarding session for Backups and restore is booked. We will give Cobal=
+t Media three hours of hands-on training at no charge.
+
+Anya Sokolova
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m045@forkline.example>
+From: Ines Duarte <ines@forkline.example>
+To: Anya Sokolova <anya@forkline.example>,
+ Ben Achterberg <ben@forkline.example>, Chloe Martin <chloe@forkline.example>
+Subject: Heads-up: engine upgrades slow down
+Date: Wed, 07 Oct 2026 09:00:00 +0000
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi all,
+
+Following ADR-14, packaging now upgrades a cluster one minor version at a tim=
+e and waits a day between steps.
+Customers on Managed clusters who ask for a fix may wait two days for it.
+
+Ines Duarte
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m046@forkline.example>
+From: Wen Zhao <wen@forkline.example>
+To: Ravi Kapoor <ravi@forkline.example>
+Subject: On-call cover during the Harbor launch
+Date: Thu, 08 Oct 2026 17:00:00 +0000
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Ravi,
+
+I will be on call for module during the whole Harbor Analytics launch, and Ko=
+fi Mensah covers nights.
+
+Wen Zhao
+
+From forkline Sat, 10 Oct 2026 00:00:00 +0000
+Message-ID: <m047@forkline.example>
+From: Nadia Petrova <nadia@forkline.example>
+To: Mara Lindqvist <mara@forkline.example>
+Subject: Pipeline this quarter
+Date: Sun, 04 Oct 2026 08:00:00 +0000
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Mara,
+
+Quill Robotics and Atlas Bank both asked for Vector search on the enterprise =
+plan. Omar Farouk is running both deals.
+
+Nadia Petrova
+

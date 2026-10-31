@@ -1,0 +1,54 @@
+{
+ "id": "SOP-1",
+ "type": "sop",
+ "title": "SOP-1: WAF Managed Rules changes deploy globally in one step",
+ "nodes": [
+  {
+   "label": "Decision",
+   "id": "SOP-1",
+   "props": {
+    "title": "WAF Managed Rules changes deploy globally in one step, with no staged rollout",
+    "status": "accepted",
+    "risk": "The SOP allowed a non-emergency rule change to go globally into production without a staged rollout.",
+    "url": "https://blog.cloudflare.com/details-of-the-cloudflare-outage-on-july-2-2019/"
+   },
+   "quote": "The SOP for a rule change specifically allows it to be pushed globally."
+  }
+ ],
+ "links": [
+  {
+   "from": [
+    "Decision",
+    "SOP-1"
+   ],
+   "type": "GOVERNS",
+   "to": [
+    "Service",
+    "waf"
+   ],
+   "quote": "But, by design, the WAF doesn't use this process because of the need to respond rapidly to threats."
+  },
+  {
+   "from": [
+    "Decision",
+    "SOP-1"
+   ],
+   "type": "GOVERNS",
+   "to": [
+    "Service",
+    "quicksilver"
+   ],
+   "quote": "deployed using our Quicksilver distributed key-value (KV) store that can push changes globally in seconds"
+  }
+ ],
+ "mentions": [
+  [
+   "Service",
+   "waf"
+  ],
+  [
+   "Service",
+   "quicksilver"
+  ]
+ ]
+}

@@ -1,0 +1,25 @@
+{
+ "id": "A",
+ "title": "Checkout 5xx spike after a pool change",
+ "story": "A config change lowers the ledger connection pool in payments-core to 20. About an hour after it deploys, in the middle of a customer's sale, checkout starts returning errors.",
+ "truth": "PR:PR-412",
+ "ingest": {},
+ "alert": {
+  "receiver": "ripple",
+  "status": "firing",
+  "alerts": [
+   {
+    "status": "firing",
+    "labels": {
+     "alertname": "High5xxRate",
+     "service": "checkout-api",
+     "severity": "critical"
+    },
+    "annotations": {
+     "summary": "checkout-api 5xx rate 38% over 5m"
+    },
+    "startsAt": "2026-10-04T10:30:00Z"
+   }
+  ]
+ }
+}

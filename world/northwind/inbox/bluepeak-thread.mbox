@@ -1,0 +1,42 @@
+From ops@bluepeak.example Thu Oct  1 08:02:00 2026
+Message-ID: <bp-payouts-1@bluepeak.example>
+Date: Thu, 01 Oct 2026 08:02:00 +0000
+From: Marta Lind <ops@bluepeak.example>
+To: Clara Jensen <clara@northwindpay.example>
+Subject: Payouts cut-off during your maintenance
+
+Hi Clara,
+
+We run our weekly Payouts batch every Friday at 06:00 UTC. Your notice says payments-core
+has maintenance planned that morning. Can you confirm our batch will not be delayed?
+
+Marta
+
+From clara@northwindpay.example Thu Oct  1 09:15:00 2026
+Message-ID: <bp-payouts-2@northwindpay.example>
+In-Reply-To: <bp-payouts-1@bluepeak.example>
+Date: Thu, 01 Oct 2026 09:15:00 +0000
+From: Clara Jensen <clara@northwindpay.example>
+To: Marta Lind <ops@bluepeak.example>
+Cc: Ravi Menon <ravi@northwindpay.example>
+Subject: Re: Payouts cut-off during your maintenance
+
+Hi Marta,
+
+I checked with Ravi. We will not run maintenance on payments-core before 08:00 UTC on Fridays, so the Bluepeak Travel Payouts batch always finishes first.
+
+Clara
+
+From clara@northwindpay.example Tue Oct  6 11:30:00 2026
+Message-ID: <bp-payouts-3@northwindpay.example>
+In-Reply-To: <bp-payouts-2@northwindpay.example>
+Date: Tue, 06 Oct 2026 11:30:00 +0000
+From: Clara Jensen <clara@northwindpay.example>
+To: Marta Lind <ops@bluepeak.example>
+Subject: Re: Payouts cut-off during your maintenance
+
+Hi Marta,
+
+A change to what I told you last week. From November, maintenance on payments-core may start at 05:00 UTC on Fridays, so the Bluepeak Travel Payouts batch should move to Thursday night.
+
+Clara

@@ -1,0 +1,13 @@
+services:
+  falkordb:
+    image: falkordb/falkordb:latest
+    environment:
+      BROWSER: "0"
+    ports:
+      - "127.0.0.1:6379:6379"
+    volumes:
+      - falkordb-data:/var/lib/falkordb/data
+    mem_limit: 512m
+
+volumes:
+  falkordb-data:

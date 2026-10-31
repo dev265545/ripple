@@ -1,0 +1,73 @@
+{
+ "id": "C",
+ "title": "Card authorisations failing during an acquirer outage",
+ "story": "CardNet, the outside card acquirer that payments-core relies on, has an outage. Nothing in the company's own code changed.",
+ "truth": "Vendor:cardnet",
+ "ingest": {
+  "vendor_status": {
+   "outages": [
+    {
+     "id": "OUT-CN-1011",
+     "vendor": "cardnet",
+     "title": "Elevated authorisation errors",
+     "start": "2026-10-11T14:05:00Z",
+     "end": null
+    }
+   ]
+  },
+  "git": [
+   {
+    "number": 424,
+    "title": "Checkout copy tweaks",
+    "user": {
+     "login": "ohaddad"
+    },
+    "merged_at": "2026-10-11T11:00:00Z",
+    "base": {
+     "repo": {
+      "name": "checkout-api"
+     }
+    },
+    "files": [
+     "checkout/copy.py"
+    ],
+    "reviews": [
+     {
+      "user": {
+       "login": "meit"
+      }
+     }
+    ],
+    "body": ""
+   }
+  ],
+  "deploys": [
+   {
+    "id": "D-424",
+    "service": "checkout-api",
+    "pr": 424,
+    "at": "2026-10-11T11:20:00Z",
+    "env": "production",
+    "status": "success"
+   }
+  ]
+ },
+ "alert": {
+  "receiver": "ripple",
+  "status": "firing",
+  "alerts": [
+   {
+    "status": "firing",
+    "labels": {
+     "alertname": "High5xxRate",
+     "service": "checkout-api",
+     "severity": "critical"
+    },
+    "annotations": {
+     "summary": "checkout-api 5xx rate 61% over 5m"
+    },
+    "startsAt": "2026-10-11T14:20:00Z"
+   }
+  ]
+ }
+}

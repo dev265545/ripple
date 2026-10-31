@@ -1,0 +1,58 @@
+{
+ "nodes": [
+  {
+   "label": "Commitment",
+   "id": "COM-bluepeak-notify-15",
+   "props": {
+    "text": "Notify Bluepeak within 15 minutes of any incident that affects the Payments API.",
+    "made_at": "2026-08-20T15:40:00Z"
+   },
+   "quote": "We will notify Bluepeak within 15 minutes of any incident that affects the Payments API."
+  }
+ ],
+ "links": [
+  {
+   "from": [
+    "Person",
+    "email:clara@northwindpay.example"
+   ],
+   "type": "MADE",
+   "to": [
+    "Commitment",
+    "COM-bluepeak-notify-15"
+   ]
+  },
+  {
+   "from": [
+    "Commitment",
+    "COM-bluepeak-notify-15"
+   ],
+   "type": "MADE_TO",
+   "to": [
+    "Customer",
+    "domain:bluepeak.example"
+   ]
+  },
+  {
+   "from": [
+    "Commitment",
+    "COM-bluepeak-notify-15"
+   ],
+   "type": "ABOUT",
+   "to": [
+    "Feature",
+    "Payments API"
+   ]
+  }
+ ],
+ "mentions": [
+  [
+   "Feature",
+   "Payments API"
+  ],
+  [
+   "Incident",
+   "INC-101"
+  ]
+ ]
+}

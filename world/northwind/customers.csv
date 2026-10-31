@@ -1,0 +1,7 @@
+id,name,domain,plan,monthly_revenue_usd,account_manager,features
+larkspur,Larkspur Retail,larkspur.example,enterprise,42000,Nikhil Shah,Hosted Checkout;Payments API;Webhooks
+bluepeak,Bluepeak Travel,bluepeak.example,enterprise,31000,Clara Jensen,Payments API;Webhooks;Payouts
+kite,Kite Grocers,kitegrocers.example,enterprise,18000,Nikhil Shah,Hosted Checkout;Payouts
+mosaic,Mosaic Books,mosaicbooks.example,growth,4200,Clara Jensen,Hosted Checkout
+tandem,Tandem Fitness,tandemfit.example,growth,3600,Clara Jensen,Payments API;Merchant Dashboard
+orchard,Orchard Toys,orchardtoys.example,starter,600,Clara Jensen,Merchant Dashboard

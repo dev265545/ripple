@@ -1,0 +1,39 @@
+{
+ "id": "PM-INC-2013-03-03",
+ "type": "postmortem",
+ "title": "INC-2013-03-03: Edge routers failed across the network",
+ "nodes": [
+  {
+   "label": "Incident",
+   "id": "INC-2013-03-03",
+   "props": {
+    "title": "Edge routers failed across the network",
+    "started_at": "2013-03-03T00:00:00Z",
+    "status": "resolved",
+    "summary": "The last global outage before 2 July 2019. The time of day is not recorded here.",
+    "url": "https://blog.cloudflare.com/todays-outage-post-mortem-82515/"
+   },
+   "quote": "a system-wide failure of our edge routers"
+  }
+ ],
+ "links": [
+  {
+   "from": [
+    "Incident",
+    "INC-2013-03-03"
+   ],
+   "type": "AFFECTS",
+   "to": [
+    "Service",
+    "edge-proxy"
+   ],
+   "quote": "a system-wide failure of our edge routers"
+  }
+ ],
+ "mentions": [
+  [
+   "Service",
+   "edge-proxy"
+  ]
+ ]
+}

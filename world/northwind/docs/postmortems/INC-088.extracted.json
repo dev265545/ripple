@@ -1,0 +1,56 @@
+{
+ "id": "PM-INC-088",
+ "type": "postmortem",
+ "title": "Postmortem INC-088: ledger-db ran out of connections",
+ "nodes": [
+  {
+   "label": "Incident",
+   "id": "INC-088",
+   "props": {
+    "title": "ledger-db ran out of connections",
+    "started_at": "2026-06-10T08:55:00Z",
+    "resolved_at": "2026-06-10T10:10:00Z",
+    "status": "resolved",
+    "symptom": "ConnectionsExhausted",
+    "summary": "ledger-db refused new connections for 75 minutes. Payouts and charges failed."
+   },
+   "quote": "ledger-db refused new connections for 75 minutes. Payouts and charges failed."
+  }
+ ],
+ "links": [
+  {
+   "from": [
+    "Incident",
+    "INC-088"
+   ],
+   "type": "AFFECTS",
+   "to": [
+    "Service",
+    "ledger-db"
+   ],
+   "quote": "ledger-db refused new connections for 75 minutes."
+  },
+  {
+   "from": [
+    "Incident",
+    "INC-088"
+   ],
+   "type": "CAUSED_BY",
+   "to": [
+    "PR",
+    "PR-301"
+   ],
+   "quote": "PR-301 scaled payouts-service to 12 replicas without lowering its connection pool."
+  }
+ ],
+ "mentions": [
+  [
+   "Service",
+   "ledger-db"
+  ],
+  [
+   "Service",
+   "payouts-service"
+  ]
+ ]
+}

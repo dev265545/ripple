@@ -1,0 +1,74 @@
+[
+ {
+  "id": "PRJ-ledger-hardening",
+  "name": "Ledger pool hardening",
+  "status": "active",
+  "lead": "tomas@northwindpay.example",
+  "team": "Platform",
+  "started": "2026-08-05",
+  "due": "2026-10-15",
+  "goal": "Stop ledger-db running out of connections under payout load, as decided in ADR-7.",
+  "services": [
+   "payments-core",
+   "ledger-db"
+  ],
+  "prs": [
+   "PR-412",
+   "PR-415"
+  ],
+  "decisions": [
+   "ADR-7"
+  ],
+  "customers": []
+ },
+ {
+  "id": "PRJ-festive-readiness",
+  "name": "Festive season readiness",
+  "status": "active",
+  "lead": "sofia@northwindpay.example",
+  "team": "Customer Success",
+  "started": "2026-09-01",
+  "due": "2026-10-20",
+  "goal": "Checkout and payments hold through the festive sales that BRD-12 describes.",
+  "services": [
+   "checkout-api",
+   "payments-core",
+   "hosted-checkout-web"
+  ],
+  "prs": [
+   "PR-414"
+  ],
+  "decisions": [],
+  "requirements": [
+   "BRD-12-R1",
+   "BRD-12-R2",
+   "BRD-12-R3"
+  ],
+  "customers": [
+   "larkspur",
+   "kite"
+  ]
+ },
+ {
+  "id": "PRJ-payout-batching",
+  "name": "Faster payout batches",
+  "status": "active",
+  "lead": "ravi@northwindpay.example",
+  "team": "Payments",
+  "started": "2026-09-15",
+  "due": "2026-11-01",
+  "goal": "Payouts reach merchants within 15 minutes of the batch window.",
+  "services": [
+   "payouts-service"
+  ],
+  "prs": [
+   "PR-301",
+   "PR-417"
+  ],
+  "decisions": [],
+  "customers": [
+   "bluepeak",
+   "kite"
+  ]
+ }
+]

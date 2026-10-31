@@ -1,0 +1,68 @@
+{
+ "id": "CON-2025-077",
+ "type": "contract",
+ "title": "Master Services Agreement CON-2025-077: Kite Grocers",
+ "nodes": [
+  {
+   "label": "Contract",
+   "id": "CON-2025-077",
+   "props": {
+    "title": "Master Services Agreement with Kite Grocers"
+   },
+   "quote": "Master Services Agreement CON-2025-077: Kite Grocers"
+  },
+  {
+   "label": "SLA",
+   "id": "SLA-CON-2025-077",
+   "props": {
+    "uptime_target": 99.9,
+    "credit_percent": 5
+   },
+   "quote": "Northwind Pay guarantees 99.9% monthly uptime for Hosted Checkout."
+  }
+ ],
+ "links": [
+  {
+   "from": [
+    "Customer",
+    "name:Kite Grocers"
+   ],
+   "type": "HAS_CONTRACT",
+   "to": [
+    "Contract",
+    "CON-2025-077"
+   ],
+   "quote": "Master Services Agreement CON-2025-077: Kite Grocers"
+  },
+  {
+   "from": [
+    "Contract",
+    "CON-2025-077"
+   ],
+   "type": "GUARANTEES",
+   "to": [
+    "SLA",
+    "SLA-CON-2025-077"
+   ],
+   "quote": "If monthly uptime falls below the target, the customer receives a service credit of 5% of that month's fees."
+  },
+  {
+   "from": [
+    "SLA",
+    "SLA-CON-2025-077"
+   ],
+   "type": "COVERS",
+   "to": [
+    "Feature",
+    "Hosted Checkout"
+   ],
+   "quote": "Northwind Pay guarantees 99.9% monthly uptime for Hosted Checkout."
+  }
+ ],
+ "mentions": [
+  [
+   "Customer",
+   "name:Kite Grocers"
+  ]
+ ]
+}

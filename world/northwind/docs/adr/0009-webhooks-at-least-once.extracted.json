@@ -1,0 +1,50 @@
+{
+ "id": "ADR-9",
+ "type": "adr",
+ "title": "ADR-9: Webhooks are delivered at least once",
+ "nodes": [
+  {
+   "label": "Decision",
+   "id": "ADR-9",
+   "props": {
+    "title": "Webhooks are delivered at least once",
+    "status": "accepted",
+    "decided_at": "2026-07-15",
+    "risk": "Merchants may receive duplicates and must deduplicate on the event id."
+   },
+   "quote": "webhooks-service retries every payment event until the merchant acknowledges it, for up to 72 hours."
+  }
+ ],
+ "links": [
+  {
+   "from": [
+    "Person",
+    "name:Priya Nair"
+   ],
+   "type": "DECIDED",
+   "to": [
+    "Decision",
+    "ADR-9"
+   ],
+   "quote": "Deciders: Priya Nair"
+  },
+  {
+   "from": [
+    "Decision",
+    "ADR-9"
+   ],
+   "type": "GOVERNS",
+   "to": [
+    "Service",
+    "webhooks-service"
+   ],
+   "quote": "webhooks-service retries every payment event until the merchant acknowledges it, for up to 72 hours."
+  }
+ ],
+ "mentions": [
+  [
+   "Service",
+   "webhooks-service"
+  ]
+ ]
+}

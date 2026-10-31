@@ -1,0 +1,42 @@
+{
+ "id": "ADR-3",
+ "type": "adr",
+ "title": "ADR-3: Pool of 100 ledger connections per payments pod",
+ "nodes": [
+  {
+   "label": "Decision",
+   "id": "ADR-3",
+   "props": {
+    "title": "Pool of 100 ledger connections per payments pod",
+    "status": "superseded",
+    "decided_at": "2026-03-11",
+    "risk": "Total connections grow with the number of pods, which nobody is tracking yet."
+   },
+   "quote": "Each payments-core pod keeps a pool of 100 ledger-db connections."
+  }
+ ],
+ "links": [
+  {
+   "from": [
+    "Person",
+    "name:Ravi Menon"
+   ],
+   "type": "DECIDED",
+   "to": [
+    "Decision",
+    "ADR-3"
+   ],
+   "quote": "Deciders: Ravi Menon"
+  }
+ ],
+ "mentions": [
+  [
+   "Service",
+   "payments-core"
+  ],
+  [
+   "Service",
+   "ledger-db"
+  ]
+ ]
+}

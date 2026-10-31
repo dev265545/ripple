@@ -1,0 +1,7 @@
+02/10/2026, 09:10 - Messages and calls are end-to-end encrypted.
+02/10/2026, 09:12 - Nikhil Shah: Morning all. Larkspur Retail want to know if Hosted Checkout will hold up for their weekend sale.
+02/10/2026, 09:14 - Imogen Hale: From our side at Larkspur, we cannot afford checkout-api going down on Saturday.
+It is our biggest day of the quarter.
+02/10/2026, 09:20 - Nikhil Shah: We will keep a payments engineer on call for Larkspur Retail through Sunday night.
+02/10/2026, 09:21 - Asha Rao: I am on call. PR-412 went out yesterday, so I will keep an eye on payments-core.
+03/10/2026, 18:40 - Imogen Hale: Sale is live. Checkout looks fine so far.

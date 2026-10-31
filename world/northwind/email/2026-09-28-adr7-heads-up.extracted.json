@@ -1,0 +1,14 @@
+{
+ "nodes": [],
+ "links": [],
+ "mentions": [
+  [
+   "Decision",
+   "ADR-7"
+  ],
+  [
+   "Service",
+   "payments-core"
+  ]
+ ]
+}

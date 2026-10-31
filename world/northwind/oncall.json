@@ -1,0 +1,70 @@
+{
+ "shifts": [
+  {
+   "service": "hosted-checkout-web",
+   "email": "omar@northwindpay.example",
+   "start": "2026-09-28T00:00:00Z",
+   "end": "2026-10-12T00:00:00Z"
+  },
+  {
+   "service": "checkout-api",
+   "email": "mei@northwindpay.example",
+   "start": "2026-09-28T00:00:00Z",
+   "end": "2026-10-12T00:00:00Z"
+  },
+  {
+   "service": "cart-service",
+   "email": "omar@northwindpay.example",
+   "start": "2026-09-28T00:00:00Z",
+   "end": "2026-10-12T00:00:00Z"
+  },
+  {
+   "service": "payments-core",
+   "email": "asha@northwindpay.example",
+   "start": "2026-09-28T00:00:00Z",
+   "end": "2026-10-12T00:00:00Z"
+  },
+  {
+   "service": "fraud-scorer",
+   "email": "diego@northwindpay.example",
+   "start": "2026-09-28T00:00:00Z",
+   "end": "2026-10-12T00:00:00Z"
+  },
+  {
+   "service": "payouts-service",
+   "email": "diego@northwindpay.example",
+   "start": "2026-09-28T00:00:00Z",
+   "end": "2026-10-12T00:00:00Z"
+  },
+  {
+   "service": "webhooks-service",
+   "email": "jonas@northwindpay.example",
+   "start": "2026-09-28T00:00:00Z",
+   "end": "2026-10-12T00:00:00Z"
+  },
+  {
+   "service": "merchant-dashboard",
+   "email": "jonas@northwindpay.example",
+   "start": "2026-09-28T00:00:00Z",
+   "end": "2026-10-12T00:00:00Z"
+  },
+  {
+   "service": "reporting-service",
+   "email": "priya@northwindpay.example",
+   "start": "2026-09-28T00:00:00Z",
+   "end": "2026-10-12T00:00:00Z"
+  },
+  {
+   "service": "ledger-db",
+   "email": "tomas@northwindpay.example",
+   "start": "2026-09-28T00:00:00Z",
+   "end": "2026-10-12T00:00:00Z"
+  },
+  {
+   "service": "notification-service",
+   "email": "lena@northwindpay.example",
+   "start": "2026-09-28T00:00:00Z",
+   "end": "2026-10-12T00:00:00Z"
+  }
+ ]
+}

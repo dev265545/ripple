@@ -1,0 +1,96 @@
+From 991b953fcb47b09a09bc5c7f3bb4227f9619142b Mon Sep 17 00:00:00 2001
+From: Ripple <ripple@northwindpay.example>
+Date: Sun, 4 Oct 2026 11:00:00 +0000
+Subject: [PATCH] Queue charges beyond the ledger pool instead of failing them
+
+Keeps the ADR-7 cap of 20 connections per pod and adds the bounded wait queue ADR-7 named as missing.
+
+Regression test: tests/test_burst.py reproduces the peak burst that failed.
+---
+ payments/charges.py | 38 ++++++++++++++++++++++++++------------
+ payments/config.py  |  2 ++
+ tests/test_burst.py | 16 ++++++++++++++++
+ 3 files changed, 44 insertions(+), 12 deletions(-)
+ create mode 100644 tests/test_burst.py
+
+diff --git a/payments/charges.py b/payments/charges.py
+index e36e036..0f0d3d7 100644
+--- a/payments/charges.py
++++ b/payments/charges.py
+@@ -1,15 +1,29 @@
++from payments.config import LEDGER_POOL_MAX_WAIT_ROUNDS, LEDGER_POOL_MAX_WAITERS
+ from payments.pool import Pool, PoolExhausted
+ 
+ 
+-def serve_burst(pool: Pool, charges: int) -> dict[str, int]:
+-    """Charges arriving in the same instant; each holds one ledger connection until it completes."""
+-    served = failed = 0
+-    for _ in range(charges):
+-        try:
+-            pool.acquire()
+-            served += 1
+-        except PoolExhausted:
+-            failed += 1
+-    for _ in range(served):
+-        pool.release()
+-    return {"served": served, "failed": failed}
++def serve_burst(
++    pool: Pool,
++    charges: int,
++    max_waiters: int = LEDGER_POOL_MAX_WAITERS,
++    max_wait_rounds: int = LEDGER_POOL_MAX_WAIT_ROUNDS,
++) -> dict[str, int]:
++    """Charges arriving in the same instant. Those beyond the pool wait in a bounded queue for a free connection."""
++    waiting = min(charges, pool.size + max_waiters)
++    failed = charges - waiting
++    served = 0
++    for _ in range(1 + max_wait_rounds):
++        holding = 0
++        while waiting:
++            try:
++                pool.acquire()
++            except PoolExhausted:
++                break
++            holding += 1
++            waiting -= 1
++        for _ in range(holding):
++            pool.release()
++        served += holding
++        if not waiting:
++            break
++    return {"served": served, "failed": failed + waiting}
+diff --git a/payments/config.py b/payments/config.py
+index 07b6b90..329a79b 100644
+--- a/payments/config.py
++++ b/payments/config.py
+@@ -1,3 +1,5 @@
+ LEDGER_POOL_SIZE = 20
+ PODS = 4
+ LEDGER_MAX_CONNECTIONS = 100
++LEDGER_POOL_MAX_WAITERS = 200
++LEDGER_POOL_MAX_WAIT_ROUNDS = 5
+diff --git a/tests/test_burst.py b/tests/test_burst.py
+new file mode 100644
+index 0000000..ebe9c39
+--- /dev/null
++++ b/tests/test_burst.py
+@@ -0,0 +1,16 @@
++import unittest
++
++from payments.charges import serve_burst
++from payments.config import LEDGER_POOL_SIZE
++from payments.pool import Pool
++
++
++class BurstTest(unittest.TestCase):
++    def test_peak_burst_beyond_the_pool_is_served_from_the_wait_queue(self):
++        self.assertEqual(serve_burst(Pool(LEDGER_POOL_SIZE), 60), {"served": 60, "failed": 0})
++
++    def test_wait_queue_is_bounded(self):
++        self.assertEqual(serve_burst(Pool(2), 10, max_waiters=3), {"served": 5, "failed": 5})
++
++    def test_charges_that_wait_too_long_fail(self):
++        self.assertEqual(serve_burst(Pool(2), 10, max_waiters=100, max_wait_rounds=1), {"served": 4, "failed": 6})
+-- 
+2.53.0
+

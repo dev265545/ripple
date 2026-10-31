@@ -1,0 +1,11 @@
+{
+ "outages": [
+  {
+   "id": "OUT-storage-0917",
+   "vendor": "object-storage",
+   "title": "Elevated error rates on snapshot uploads",
+   "start": "2026-09-17T14:00:00Z",
+   "end": "2026-09-17T16:00:00Z"
+  }
+ ]
+}

@@ -1,0 +1,10 @@
+products:
+  - name: Northwind Checkout
+    features:
+      - {name: Hosted Checkout, served_by: [hosted-checkout-web]}
+      - {name: Payments API, served_by: [checkout-api]}
+  - name: Northwind Merchant
+    features:
+      - {name: Payouts, served_by: [payouts-service]}
+      - {name: Webhooks, served_by: [webhooks-service]}
+      - {name: Merchant Dashboard, served_by: [merchant-dashboard]}

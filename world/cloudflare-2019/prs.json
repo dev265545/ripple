@@ -1,0 +1,50 @@
+[
+ {
+  "number": 701,
+  "title": "Refactor rule matching to use less CPU",
+  "user": {
+   "login": "waf-refactorer"
+  },
+  "merged_at": "2019-06-11T10:00:00Z",
+  "base": {
+   "repo": {
+    "name": "waf"
+   }
+  },
+  "files": [
+   "waf/engine.py"
+  ],
+  "reviews": [
+   {
+    "user": {
+     "login": "waf-reviewer"
+    }
+   }
+  ],
+  "body": "Reconstructed. The postmortem says a CPU protection was removed by mistake in a refactoring weeks prior; the date here is a placeholder. https://blog.cloudflare.com/details-of-the-cloudflare-outage-on-july-2-2019/"
+ },
+ {
+  "number": 742,
+  "title": "Add XSS inline JavaScript rule in simulate mode",
+  "user": {
+   "login": "waf-author"
+  },
+  "merged_at": "2019-07-02T13:31:00Z",
+  "base": {
+   "repo": {
+    "name": "waf"
+   }
+  },
+  "files": [
+   "waf/rules.py"
+  ],
+  "reviews": [
+   {
+    "user": {
+     "login": "waf-reviewer"
+    }
+   }
+  ],
+  "body": "Merged at 13:31 UTC and deployed worldwide at 13:42 UTC. The pull request number is a placeholder. https://blog.cloudflare.com/details-of-the-cloudflare-outage-on-july-2-2019/"
+ }
+]

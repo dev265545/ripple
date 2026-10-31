@@ -1,0 +1,80 @@
+{
+ "id": "CON-2026-014",
+ "type": "contract",
+ "title": "Master Services Agreement CON-2026-014: Larkspur Retail",
+ "nodes": [
+  {
+   "label": "Contract",
+   "id": "CON-2026-014",
+   "props": {
+    "title": "Master Services Agreement with Larkspur Retail"
+   },
+   "quote": "Master Services Agreement CON-2026-014: Larkspur Retail"
+  },
+  {
+   "label": "SLA",
+   "id": "SLA-CON-2026-014",
+   "props": {
+    "uptime_target": 99.95,
+    "credit_percent": 10
+   },
+   "quote": "Northwind Pay guarantees 99.95% monthly uptime for Hosted Checkout and Payments API."
+  }
+ ],
+ "links": [
+  {
+   "from": [
+    "Customer",
+    "name:Larkspur Retail"
+   ],
+   "type": "HAS_CONTRACT",
+   "to": [
+    "Contract",
+    "CON-2026-014"
+   ],
+   "quote": "Master Services Agreement CON-2026-014: Larkspur Retail"
+  },
+  {
+   "from": [
+    "Contract",
+    "CON-2026-014"
+   ],
+   "type": "GUARANTEES",
+   "to": [
+    "SLA",
+    "SLA-CON-2026-014"
+   ],
+   "quote": "If monthly uptime falls below the target, the customer receives a service credit of 10% of that month's fees."
+  },
+  {
+   "from": [
+    "SLA",
+    "SLA-CON-2026-014"
+   ],
+   "type": "COVERS",
+   "to": [
+    "Feature",
+    "Hosted Checkout"
+   ],
+   "quote": "Northwind Pay guarantees 99.95% monthly uptime for Hosted Checkout and Payments API."
+  },
+  {
+   "from": [
+    "SLA",
+    "SLA-CON-2026-014"
+   ],
+   "type": "COVERS",
+   "to": [
+    "Feature",
+    "Payments API"
+   ],
+   "quote": "Northwind Pay guarantees 99.95% monthly uptime for Hosted Checkout and Payments API."
+  }
+ ],
+ "mentions": [
+  [
+   "Customer",
+   "name:Larkspur Retail"
+  ]
+ ]
+}

@@ -1,0 +1,7 @@
+products:
+  - name: Cloudflare
+    features:
+      - {name: CDN and proxy, served_by: [edge-proxy]}
+      - {name: WAF Managed Rules, served_by: [waf]}
+      - {name: Dashboard and API, served_by: [dashboard-api]}
+      - {name: Access, served_by: [access]}

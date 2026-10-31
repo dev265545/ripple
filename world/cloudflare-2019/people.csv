@@ -1,0 +1,10 @@
+id,name,email,git_handle,team,role,manager
+jgc,John Graham-Cumming,jgc@cloudflare-2019.example,,Leadership,CTO. Wrote the postmortem and the original Lua WAF,
+mprince,Matthew Prince,mprince@cloudflare-2019.example,,Leadership,CEO,
+waf-author,WAF rule author (not named publicly),waf-author@cloudflare-2019.example,waf-author,Firewall,Engineer on the firewall team,
+waf-reviewer,WAF rule reviewer (not named publicly),waf-reviewer@cloudflare-2019.example,waf-reviewer,Firewall,Engineer on the firewall team,
+waf-refactorer,WAF refactor author (not named publicly),waf-refactorer@cloudflare-2019.example,waf-refactorer,Firewall,Engineer on the firewall team,
+sre-oncall,SRE on call (not named publicly),sre-oncall@cloudflare-2019.example,,SRE,Site reliability engineer,
+se-lead,Solutions Engineering lead (not named publicly),se-lead@cloudflare-2019.example,,Solutions Engineering,Reported the 80% traffic loss,
+perf-engineer,Performance engineer (not named publicly),perf-engineer@cloudflare-2019.example,,Performance,Pulled live CPU data from a machine,
+support,Customer Support (team inbox),support@cloudflare-2019.example,,Customer Support,Where SLA claims are sent,

@@ -1,0 +1,69 @@
+{
+ "id": "CON-BUSINESS-SLA",
+ "type": "contract",
+ "title": "Cloudflare Business SLA (public terms, archived 21 July 2019)",
+ "nodes": [
+  {
+   "label": "Contract",
+   "id": "CON-BUSINESS-SLA",
+   "props": {
+    "title": "Cloudflare Business SLA (public terms)",
+    "url": "https://web.archive.org/web/20190721090147/https://www.cloudflare.com/business-sla/"
+   },
+   "quote": "1.1 100% Uptime. The Service will serve Customer Content 100% of the time without qualification."
+  },
+  {
+   "label": "SLA",
+   "id": "SLA-BUSINESS",
+   "props": {
+    "uptime_target": 100,
+    "credit_percent": 0.06,
+    "url": "https://web.archive.org/web/20190721090147/https://www.cloudflare.com/business-sla/"
+   },
+   "quote": "1.1 100% Uptime. The Service will serve Customer Content 100% of the time without qualification."
+  }
+ ],
+ "links": [
+  {
+   "from": [
+    "Customer",
+    "name:Business plan customers"
+   ],
+   "type": "HAS_CONTRACT",
+   "to": [
+    "Contract",
+    "CON-BUSINESS-SLA"
+   ]
+  },
+  {
+   "from": [
+    "Contract",
+    "CON-BUSINESS-SLA"
+   ],
+   "type": "GUARANTEES",
+   "to": [
+    "SLA",
+    "SLA-BUSINESS"
+   ],
+   "quote": "1.2 Penalties. If the Service fails to meet the above service level, the Customer will receive a credit equal to the result of the Service Credit calculation in Section 6 of this SLA."
+  },
+  {
+   "from": [
+    "SLA",
+    "SLA-BUSINESS"
+   ],
+   "type": "COVERS",
+   "to": [
+    "Feature",
+    "CDN and proxy"
+   ],
+   "quote": "1.1 100% Uptime. The Service will serve Customer Content 100% of the time without qualification."
+  }
+ ],
+ "mentions": [
+  [
+   "Customer",
+   "name:Business plan customers"
+  ]
+ ]
+}

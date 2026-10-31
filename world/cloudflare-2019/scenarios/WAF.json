@@ -1,0 +1,26 @@
+{
+ "id": "WAF",
+ "title": "2 July 2019: one WAF rule takes down the edge",
+ "story": "At 13:42 UTC a new firewall rule deploys to every Cloudflare machine at once. Its regular expression backtracks so badly that CPU hits 100% worldwide and sites behind Cloudflare return 502 errors. This is the first page that went out, three minutes later.",
+ "basis": "A replay of a real outage. The timeline, the regular expression, the SLA and the affected sites come from Cloudflare's public postmortem and press reports, each linked on its record. The code is a small Python stand-in, because the real WAF source is not public.",
+ "truth": "PR:PR-742",
+ "ingest": {},
+ "alert": {
+  "receiver": "ripple",
+  "status": "firing",
+  "alerts": [
+   {
+    "status": "firing",
+    "labels": {
+     "alertname": "WAFSyntheticCheckFailing",
+     "service": "waf",
+     "severity": "critical"
+    },
+    "annotations": {
+     "summary": "Synthetic WAF check failing from outside the network; 502 errors and CPU exhaustion reported worldwide"
+    },
+    "startsAt": "2019-07-02T13:45:00Z"
+   }
+  ]
+ }
+}

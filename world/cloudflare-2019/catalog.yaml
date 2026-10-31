@@ -1,0 +1,44 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: {name: edge-proxy, description: "Core proxy and CDN. Every CPU core that handles HTTP and HTTPS traffic, in more than 180 cities", annotations: {cloudflare/tier: "1"}}
+spec: {type: service, owner: Edge, dependsOn: [component:waf, component:quicksilver]}
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: {name: waf, description: "WAF Managed Rules. A Lua WAF that runs PCRE regular expressions on every request", annotations: {cloudflare/tier: "1"}}
+spec: {type: service, owner: Firewall, dependsOn: [component:quicksilver]}
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: {name: quicksilver, description: "Distributed key-value store that pushes a change to every machine worldwide in seconds", annotations: {cloudflare/tier: "1"}}
+spec: {type: service, owner: Systems Engineering, dependsOn: []}
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: {name: dashboard-api, description: "Customer Dashboard and API. Both pass through the Cloudflare edge", annotations: {cloudflare/tier: "1"}}
+spec: {type: website, owner: Dashboard, dependsOn: [component:edge-proxy]}
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: {name: access, description: "Cloudflare Access. Signs staff in to internal tools", annotations: {cloudflare/tier: "2"}}
+spec: {type: service, owner: Access, dependsOn: [component:edge-proxy]}
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: {name: internal-control-panel, description: "Internal control panel, reached through Access", annotations: {cloudflare/tier: "2"}}
+spec: {type: website, owner: SRE, dependsOn: [component:access]}
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: {name: jira, description: "Change requests and tickets, reached through Access", annotations: {cloudflare/tier: "3"}}
+spec: {type: website, owner: Engineering Tools, dependsOn: [component:access]}
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: {name: teamcity, description: "Build system that builds, tests and deploys WAF rules, reached through Access", annotations: {cloudflare/tier: "2"}}
+spec: {type: service, owner: Engineering Tools, dependsOn: [component:access]}
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: {name: status-page, description: "Public status page, updated by hand", annotations: {cloudflare/tier: "2"}}
+spec: {type: website, owner: SRE, dependsOn: []}

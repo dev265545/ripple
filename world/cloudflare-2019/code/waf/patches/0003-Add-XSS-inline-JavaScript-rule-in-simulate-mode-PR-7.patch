@@ -1,0 +1,45 @@
+From a84707edef32e667c6c31d3e7558576254d4a3a9 Mon Sep 17 00:00:00 2001
+From: Reconstruction <reconstruction@cloudflare-2019.example>
+Date: Tue, 2 Jul 2019 13:31:00 +0000
+Subject: [PATCH 3/3] Add XSS inline JavaScript rule in simulate mode (PR-742)
+
+Improves blocking of inline JavaScript used in attacks.
+---
+ tests/test_engine.py | 6 +++++-
+ waf/rules.py         | 7 ++++++-
+ 2 files changed, 11 insertions(+), 2 deletions(-)
+
+diff --git a/tests/test_engine.py b/tests/test_engine.py
+index 698c3ae..9bc3c38 100644
+--- a/tests/test_engine.py
++++ b/tests/test_engine.py
+@@ -8,5 +8,9 @@ class EngineTest(unittest.TestCase):
+         self.assertEqual(inspect("id=1 UNION SELECT password FROM users"), ["100001"])
+         self.assertEqual(inspect("file=../../etc/passwd"), ["100002"])
+ 
++    def test_inline_javascript_is_matched_however_it_is_written(self):
++        for body in ["q=';alert(document.cookie);x=1", "1;location=evil", "null;top.location=1", "`-x=document.cookie", "\"]}+ window.name = 1"]:
++            self.assertEqual(inspect(body), ["100043"], body)
++
+     def test_ordinary_requests_pass(self):
+-        self.assertEqual(inspect("name=Ada&city=London"), [])
++        self.assertEqual(inspect("hello world"), [])
+diff --git a/waf/rules.py b/waf/rules.py
+index 341ab94..616ee51 100644
+--- a/waf/rules.py
++++ b/waf/rules.py
+@@ -11,5 +11,10 @@ class Rule:
+ 
+ SQL_UNION = Rule("100001", "SQL injection: UNION SELECT", re.compile(r"(?i)union\s+select"))
+ PATH_TRAVERSAL = Rule("100002", "Path traversal", re.compile(r"\.\./\.\./"))
++XSS_INLINE_JS = Rule(
++    "100043",
++    "XSS: inline JavaScript (simulate mode)",
++    re.compile(r'''(?:(?:\"|'|\]|\}|\\|\d|(?:nan|infinity|true|false|null|undefined|symbol|math)|\`|\-|\+)+[)]*;?((?:\s|-|~|!|{}|\|\||\+)*.*(?:.*=.*)))'''),
++)
+ 
+-RULES = [SQL_UNION, PATH_TRAVERSAL]
++RULES = [SQL_UNION, PATH_TRAVERSAL, XSS_INLINE_JS]
+-- 
+2.53.0
+

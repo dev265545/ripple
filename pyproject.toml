@@ -1,0 +1,18 @@
+[project]
+name = "ripple"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = ["falkordb", "pyyaml", "fastapi", "uvicorn", "mcp"]
+
+[project.scripts]
+ripple = "ripple.cli:main"
+
+[dependency-groups]
+dev = ["pytest", "httpx"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,184 @@
+{
+ "shifts": [
+  {
+   "service": "module",
+   "email": "wen@forkline.example",
+   "start": "2026-09-26T00:00:00Z",
+   "end": "2026-10-03T00:00:00Z"
+  },
+  {
+   "service": "module",
+   "email": "kofi@forkline.example",
+   "start": "2026-10-03T00:00:00Z",
+   "end": "2026-10-10T00:00:00Z"
+  },
+  {
+   "service": "module",
+   "email": "dev@forkline.example",
+   "start": "2026-10-10T00:00:00Z",
+   "end": "2026-10-17T00:00:00Z"
+  },
+  {
+   "service": "module",
+   "email": "wen@forkline.example",
+   "start": "2026-10-17T00:00:00Z",
+   "end": "2026-10-24T00:00:00Z"
+  },
+  {
+   "service": "module",
+   "email": "kofi@forkline.example",
+   "start": "2026-10-24T00:00:00Z",
+   "end": "2026-10-31T00:00:00Z"
+  },
+  {
+   "service": "runtime",
+   "email": "leo@forkline.example",
+   "start": "2026-09-26T00:00:00Z",
+   "end": "2026-10-03T00:00:00Z"
+  },
+  {
+   "service": "runtime",
+   "email": "priya@forkline.example",
+   "start": "2026-10-03T00:00:00Z",
+   "end": "2026-10-10T00:00:00Z"
+  },
+  {
+   "service": "runtime",
+   "email": "leo@forkline.example",
+   "start": "2026-10-10T00:00:00Z",
+   "end": "2026-10-17T00:00:00Z"
+  },
+  {
+   "service": "runtime",
+   "email": "priya@forkline.example",
+   "start": "2026-10-17T00:00:00Z",
+   "end": "2026-10-24T00:00:00Z"
+  },
+  {
+   "service": "runtime",
+   "email": "leo@forkline.example",
+   "start": "2026-10-24T00:00:00Z",
+   "end": "2026-10-31T00:00:00Z"
+  },
+  {
+   "service": "index",
+   "email": "emil@forkline.example",
+   "start": "2026-09-26T00:00:00Z",
+   "end": "2026-10-03T00:00:00Z"
+  },
+  {
+   "service": "index",
+   "email": "sara@forkline.example",
+   "start": "2026-10-03T00:00:00Z",
+   "end": "2026-10-10T00:00:00Z"
+  },
+  {
+   "service": "index",
+   "email": "emil@forkline.example",
+   "start": "2026-10-10T00:00:00Z",
+   "end": "2026-10-17T00:00:00Z"
+  },
+  {
+   "service": "index",
+   "email": "sara@forkline.example",
+   "start": "2026-10-17T00:00:00Z",
+   "end": "2026-10-24T00:00:00Z"
+  },
+  {
+   "service": "index",
+   "email": "emil@forkline.example",
+   "start": "2026-10-24T00:00:00Z",
+   "end": "2026-10-31T00:00:00Z"
+  },
+  {
+   "service": "persistence",
+   "email": "kofi@forkline.example",
+   "start": "2026-09-26T00:00:00Z",
+   "end": "2026-10-03T00:00:00Z"
+  },
+  {
+   "service": "persistence",
+   "email": "wen@forkline.example",
+   "start": "2026-10-03T00:00:00Z",
+   "end": "2026-10-10T00:00:00Z"
+  },
+  {
+   "service": "persistence",
+   "email": "kofi@forkline.example",
+   "start": "2026-10-10T00:00:00Z",
+   "end": "2026-10-17T00:00:00Z"
+  },
+  {
+   "service": "persistence",
+   "email": "wen@forkline.example",
+   "start": "2026-10-17T00:00:00Z",
+   "end": "2026-10-24T00:00:00Z"
+  },
+  {
+   "service": "persistence",
+   "email": "kofi@forkline.example",
+   "start": "2026-10-24T00:00:00Z",
+   "end": "2026-10-31T00:00:00Z"
+  },
+  {
+   "service": "packaging",
+   "email": "jonas@forkline.example",
+   "start": "2026-09-26T00:00:00Z",
+   "end": "2026-10-03T00:00:00Z"
+  },
+  {
+   "service": "packaging",
+   "email": "ines@forkline.example",
+   "start": "2026-10-03T00:00:00Z",
+   "end": "2026-10-10T00:00:00Z"
+  },
+  {
+   "service": "packaging",
+   "email": "jonas@forkline.example",
+   "start": "2026-10-10T00:00:00Z",
+   "end": "2026-10-17T00:00:00Z"
+  },
+  {
+   "service": "packaging",
+   "email": "ines@forkline.example",
+   "start": "2026-10-17T00:00:00Z",
+   "end": "2026-10-24T00:00:00Z"
+  },
+  {
+   "service": "packaging",
+   "email": "jonas@forkline.example",
+   "start": "2026-10-24T00:00:00Z",
+   "end": "2026-10-31T00:00:00Z"
+  },
+  {
+   "service": "FalkorDB",
+   "email": "wen@forkline.example",
+   "start": "2026-09-26T00:00:00Z",
+   "end": "2026-10-03T00:00:00Z"
+  },
+  {
+   "service": "FalkorDB",
+   "email": "dev@forkline.example",
+   "start": "2026-10-03T00:00:00Z",
+   "end": "2026-10-10T00:00:00Z"
+  },
+  {
+   "service": "FalkorDB",
+   "email": "kofi@forkline.example",
+   "start": "2026-10-10T00:00:00Z",
+   "end": "2026-10-17T00:00:00Z"
+  },
+  {
+   "service": "FalkorDB",
+   "email": "wen@forkline.example",
+   "start": "2026-10-17T00:00:00Z",
+   "end": "2026-10-24T00:00:00Z"
+  },
+  {
+   "service": "FalkorDB",
+   "email": "dev@forkline.example",
+   "start": "2026-10-24T00:00:00Z",
+   "end": "2026-10-31T00:00:00Z"
+  }
+ ]
+}

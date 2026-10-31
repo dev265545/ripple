@@ -1,0 +1,72 @@
+{
+ "id": "PM-INC-101",
+ "type": "postmortem",
+ "title": "Postmortem INC-101: Payments timeouts from a ledger retry storm",
+ "nodes": [
+  {
+   "label": "Incident",
+   "id": "INC-101",
+   "props": {
+    "title": "Payments timeouts from a ledger retry storm",
+    "started_at": "2026-08-02T07:00:00Z",
+    "resolved_at": "2026-08-02T10:05:00Z",
+    "status": "resolved",
+    "symptom": "High5xxRate",
+    "summary": "Charges timed out for three hours. checkout-api returned 5xx to merchants."
+   },
+   "quote": "Charges timed out for three hours. checkout-api returned 5xx to merchants."
+  }
+ ],
+ "links": [
+  {
+   "from": [
+    "Incident",
+    "INC-101"
+   ],
+   "type": "AFFECTS",
+   "to": [
+    "Service",
+    "payments-core"
+   ],
+   "quote": "Charges timed out for three hours."
+  },
+  {
+   "from": [
+    "Incident",
+    "INC-101"
+   ],
+   "type": "CAUSED_BY",
+   "to": [
+    "PR",
+    "PR-377"
+   ],
+   "quote": "PR-377 retried failed ledger writes immediately and without a limit, multiplying load on ledger-db."
+  },
+  {
+   "from": [
+    "PR",
+    "PR-380"
+   ],
+   "type": "FIXES",
+   "to": [
+    "Incident",
+    "INC-101"
+   ],
+   "quote": "PR-380 added exponential backoff and a retry limit."
+  }
+ ],
+ "mentions": [
+  [
+   "Service",
+   "payments-core"
+  ],
+  [
+   "Service",
+   "checkout-api"
+  ],
+  [
+   "Service",
+   "ledger-db"
+  ]
+ ]
+}

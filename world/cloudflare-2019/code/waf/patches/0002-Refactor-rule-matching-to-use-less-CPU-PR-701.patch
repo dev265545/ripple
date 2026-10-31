@@ -1,0 +1,56 @@
+From 99d193038d10ada9fc4669cdcb9f12a7704634f0 Mon Sep 17 00:00:00 2001
+From: Reconstruction <reconstruction@cloudflare-2019.example>
+Date: Tue, 11 Jun 2019 10:00:00 +0000
+Subject: [PATCH 2/3] Refactor rule matching to use less CPU (PR-701)
+
+One search per rule over the whole body instead of one per window.
+---
+ waf/engine.py | 32 ++++----------------------------
+ 1 file changed, 4 insertions(+), 28 deletions(-)
+
+diff --git a/waf/engine.py b/waf/engine.py
+index 7909456..423295b 100644
+--- a/waf/engine.py
++++ b/waf/engine.py
+@@ -1,34 +1,10 @@
+-import time
+-
+ from waf.rules import RULES, Rule
+ 
+-WINDOW = 128
+-OVERLAP = 64
+-CPU_BUDGET_MS = 50
+-
+-
+-class RuleBudgetExceeded(Exception):
+-    pass
+-
+ 
+-def run_rule(rule: Rule, body: str, budget_ms: int = CPU_BUDGET_MS) -> bool:
+-    """Scans the body a window at a time, so one rule can never hold a CPU core past its budget."""
+-    deadline = time.monotonic() + budget_ms / 1000
+-    for start in range(0, max(len(body), 1), WINDOW):
+-        if rule.pattern.search(body, start, start + WINDOW + OVERLAP):
+-            return True
+-        if time.monotonic() > deadline:
+-            raise RuleBudgetExceeded(rule.id)
+-    return False
++def run_rule(rule: Rule, body: str) -> bool:
++    return rule.pattern.search(body) is not None
+ 
+ 
+ def inspect(body: str) -> list[str]:
+-    """Ids of the managed rules a request body matches. A rule that runs out of budget is skipped, not waited for."""
+-    matched = []
+-    for rule in RULES:
+-        try:
+-            if run_rule(rule, body):
+-                matched.append(rule.id)
+-        except RuleBudgetExceeded:
+-            continue
+-    return matched
++    """Ids of the managed rules a request body matches."""
++    return [rule.id for rule in RULES if run_rule(rule, body)]
+-- 
+2.53.0
+

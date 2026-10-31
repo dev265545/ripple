@@ -1,0 +1,39 @@
+{
+ "id": "PM-INC-2019-06-24",
+ "type": "postmortem",
+ "title": "INC-2019-06-24: Verizon route leak took parts of the network offline",
+ "nodes": [
+  {
+   "label": "Incident",
+   "id": "INC-2019-06-24",
+   "props": {
+    "title": "Verizon route leak took parts of the network offline",
+    "started_at": "2019-06-24T00:00:00Z",
+    "status": "resolved",
+    "summary": "Eight days before 2 July 2019. Routes leaked by another network were accepted by Verizon. Not a Cloudflare change. The time of day is not recorded here.",
+    "url": "https://blog.cloudflare.com/how-verizon-and-a-bgp-optimizer-knocked-large-parts-of-the-internet-offline-today/"
+   },
+   "quote": "How Verizon and a BGP Optimizer Knocked Large Parts of the Internet Offline Today"
+  }
+ ],
+ "links": [
+  {
+   "from": [
+    "Incident",
+    "INC-2019-06-24"
+   ],
+   "type": "AFFECTS",
+   "to": [
+    "Service",
+    "edge-proxy"
+   ],
+   "quote": "How Verizon and a BGP Optimizer Knocked Large Parts of the Internet Offline Today"
+  }
+ ],
+ "mentions": [
+  [
+   "Service",
+   "edge-proxy"
+  ]
+ ]
+}

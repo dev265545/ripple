@@ -1,0 +1,71 @@
+[
+ {
+  "id": "PRJ-numeric-index",
+  "name": "Native numeric index",
+  "status": "active",
+  "goal": "Range queries on numbers answer from the index without a full scan.",
+  "started": "2026-09-10T10:00:00Z",
+  "due": "2026-10-30T10:00:00Z",
+  "lead": "sara@forkline.example",
+  "team": "Indexing",
+  "services": [
+   "index"
+  ],
+  "customers": [
+   "cinder",
+   "atlas"
+  ]
+ },
+ {
+  "id": "PRJ-safe-restore",
+  "name": "Restores that cannot corrupt",
+  "status": "active",
+  "goal": "A damaged snapshot is refused with a clear error instead of loading half a graph.",
+  "started": "2026-09-19T10:00:00Z",
+  "due": "2026-10-20T10:00:00Z",
+  "lead": "tomas@forkline.example",
+  "team": "Storage",
+  "services": [
+   "persistence"
+  ],
+  "customers": [
+   "harbor",
+   "meridian"
+  ]
+ },
+ {
+  "id": "PRJ-parser-parity",
+  "name": "Parser parity",
+  "status": "active",
+  "goal": "Every query the old parser accepted is accepted by the new one, with the same result.",
+  "started": "2026-09-22T10:00:00Z",
+  "due": "2026-11-04T10:00:00Z",
+  "lead": "hana@forkline.example",
+  "team": "Query",
+  "services": [
+   "parser"
+  ],
+  "customers": [
+   "quill"
+  ]
+ },
+ {
+  "id": "PRJ-private-link",
+  "name": "Private network access",
+  "status": "planned",
+  "goal": "Enterprise customers reach their clusters without crossing the public internet.",
+  "started": "2026-10-05T10:00:00Z",
+  "due": "2026-12-09T10:00:00Z",
+  "lead": "yusuf@forkline.example",
+  "team": "Cloud",
+  "services": [
+   "packaging",
+   "module"
+  ],
+  "customers": [
+   "juniper",
+   "saffron",
+   "tidewater"
+  ]
+ }
+]

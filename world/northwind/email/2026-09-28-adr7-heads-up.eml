@@ -1,0 +1,12 @@
+Message-ID: <2026-09-28-adr7-heads-up@mail.northwindpay.example>
+From: Tomas Novak <tomas@northwindpay.example>
+To: Ravi Menon <ravi@northwindpay.example>, Asha Rao <asha@northwindpay.example>
+Date: Mon, 28 Sep 2026 16:20:00 +0000
+Subject: ADR-7 accepted: ledger pool cap
+Content-Type: text/plain; charset=utf-8
+
+Ravi, Asha,
+
+ADR-7 is accepted. Please lower the payments-core ledger pool to 20 before the change freeze on 5 October. The wait queue can follow later.
+
+Tomas

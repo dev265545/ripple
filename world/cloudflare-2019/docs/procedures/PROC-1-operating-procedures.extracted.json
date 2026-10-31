@@ -1,0 +1,137 @@
+{
+ "id": "PROC-1",
+ "type": "procedure",
+ "title": "PROC-1: Operating procedures in force on 2 July 2019",
+ "nodes": [
+  {
+   "label": "Requirement",
+   "id": "PROC-1-R1",
+   "props": {
+    "text": "CI tests must pass before a WAF rule change deploys globally. The suite does not measure CPU use.",
+    "target": "CI green before global deploy",
+    "url": "https://blog.cloudflare.com/details-of-the-cloudflare-outage-on-july-2-2019/"
+   },
+   "quote": "The standard procedure for a WAF Managed Rules change indicates that Continuous Integration (CI) tests must pass prior to a global deploy."
+  },
+  {
+   "label": "Requirement",
+   "id": "PROC-1-R2",
+   "props": {
+    "text": "Rolling back a WAF rule means running the complete WAF build twice.",
+    "target": "two full builds to roll back",
+    "url": "https://blog.cloudflare.com/details-of-the-cloudflare-outage-on-july-2-2019/"
+   },
+   "quote": "The rollback plan required running the complete WAF build twice taking too long."
+  },
+  {
+   "label": "Requirement",
+   "id": "PROC-1-R3",
+   "props": {
+    "text": "Staff credentials are disabled when the internal control panel is not used frequently.",
+    "target": "credentials time out",
+    "url": "https://blog.cloudflare.com/details-of-the-cloudflare-outage-on-july-2-2019/"
+   },
+   "quote": "some members of the team had lost access because of a security feature that disables their credentials if they don't use the internal control panel frequently"
+  },
+  {
+   "label": "Requirement",
+   "id": "PROC-1-R4",
+   "props": {
+    "text": "The status page is updated by hand during an incident.",
+    "target": "manual status updates",
+    "url": "https://blog.cloudflare.com/details-of-the-cloudflare-outage-on-july-2-2019/"
+   },
+   "quote": "We didn't update our status page quickly enough."
+  },
+  {
+   "label": "Requirement",
+   "id": "PROC-1-R5",
+   "props": {
+    "text": "Customers reach the Dashboard and API through the Cloudflare edge.",
+    "target": "no path around the edge",
+    "url": "https://blog.cloudflare.com/details-of-the-cloudflare-outage-on-july-2-2019/"
+   },
+   "quote": "Our customers were unable to access the Cloudflare Dashboard or API because they pass through the Cloudflare edge."
+  }
+ ],
+ "links": [
+  {
+   "from": [
+    "Requirement",
+    "PROC-1-R1"
+   ],
+   "type": "APPLIES_TO",
+   "to": [
+    "Service",
+    "waf"
+   ],
+   "quote": "The standard procedure for a WAF Managed Rules change indicates that Continuous Integration (CI) tests must pass prior to a global deploy."
+  },
+  {
+   "from": [
+    "Requirement",
+    "PROC-1-R2"
+   ],
+   "type": "APPLIES_TO",
+   "to": [
+    "Service",
+    "teamcity"
+   ],
+   "quote": "The rollback plan required running the complete WAF build twice taking too long."
+  },
+  {
+   "from": [
+    "Requirement",
+    "PROC-1-R3"
+   ],
+   "type": "APPLIES_TO",
+   "to": [
+    "Service",
+    "internal-control-panel"
+   ],
+   "quote": "some members of the team had lost access because of a security feature that disables their credentials if they don't use the internal control panel frequently"
+  },
+  {
+   "from": [
+    "Requirement",
+    "PROC-1-R4"
+   ],
+   "type": "APPLIES_TO",
+   "to": [
+    "Service",
+    "status-page"
+   ],
+   "quote": "We didn't update our status page quickly enough."
+  },
+  {
+   "from": [
+    "Requirement",
+    "PROC-1-R5"
+   ],
+   "type": "APPLIES_TO",
+   "to": [
+    "Service",
+    "dashboard-api"
+   ],
+   "quote": "Our customers were unable to access the Cloudflare Dashboard or API because they pass through the Cloudflare edge."
+  }
+ ],
+ "mentions": [
+  [
+   "Service",
+   "waf"
+  ],
+  [
+   "Service",
+   "teamcity"
+  ],
+  [
+   "Service",
+   "internal-control-panel"
+  ],
+  [
+   "Service",
+   "dashboard-api"
+  ]
+ ]
+}

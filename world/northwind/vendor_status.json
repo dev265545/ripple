@@ -1,0 +1,11 @@
+{
+ "outages": [
+  {
+   "id": "OUT-SW-0912",
+   "vendor": "sendwave",
+   "title": "Delayed email delivery",
+   "start": "2026-09-12T04:00:00Z",
+   "end": "2026-09-12T07:30:00Z"
+  }
+ ]
+}

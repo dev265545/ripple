@@ -1,0 +1,118 @@
+{
+ "id": "B",
+ "title": "Webhook delivery failures after a fraud client pool change",
+ "story": "A change lowers the fraud-scorer client pool to 5. Two days later webhook deliveries start failing, on a service nobody touched.",
+ "truth": "PR:PR-421",
+ "ingest": {
+  "git": [
+   {
+    "number": 421,
+    "title": "Lower fraud-scorer client pool to 5",
+    "user": {
+     "login": "dsantos"
+    },
+    "merged_at": "2026-10-09T05:30:00Z",
+    "base": {
+     "repo": {
+      "name": "payments-core"
+     }
+    },
+    "files": [
+     "payments/config.py"
+    ],
+    "reviews": [
+     {
+      "user": {
+       "login": "ravim"
+      }
+     }
+    ],
+    "body": ""
+   },
+   {
+    "number": 422,
+    "title": "Webhook signature header rename",
+    "user": {
+     "login": "jberg"
+    },
+    "merged_at": "2026-10-08T02:00:00Z",
+    "base": {
+     "repo": {
+      "name": "webhooks-service"
+     }
+    },
+    "files": [
+     "webhooks/sign.py"
+    ],
+    "reviews": [
+     {
+      "user": {
+       "login": "priyan"
+      }
+     }
+    ],
+    "body": ""
+   },
+   {
+    "number": 423,
+    "title": "Ledger vacuum schedule",
+    "user": {
+     "login": "lenaf"
+    },
+    "merged_at": "2026-10-09T06:20:00Z",
+    "base": {
+     "repo": {
+      "name": "ledger-db"
+     }
+    },
+    "files": [
+     "ops/vacuum.cron"
+    ],
+    "reviews": [
+     {
+      "user": {
+       "login": "tnovak"
+      }
+     }
+    ],
+    "body": ""
+   }
+  ],
+  "deploys": [
+   {
+    "id": "D-421",
+    "service": "payments-core",
+    "pr": 421,
+    "at": "2026-10-09T05:45:00Z",
+    "env": "production",
+    "status": "success"
+   },
+   {
+    "id": "D-422",
+    "service": "webhooks-service",
+    "pr": 422,
+    "at": "2026-10-08T02:20:00Z",
+    "env": "production",
+    "status": "success"
+   }
+  ]
+ },
+ "alert": {
+  "receiver": "ripple",
+  "status": "firing",
+  "alerts": [
+   {
+    "status": "firing",
+    "labels": {
+     "alertname": "High5xxRate",
+     "service": "webhooks-service",
+     "severity": "critical"
+    },
+    "annotations": {
+     "summary": "webhooks-service 5xx rate 22% over 5m"
+    },
+    "startsAt": "2026-10-09T07:00:00Z"
+   }
+  ]
+ }
+}

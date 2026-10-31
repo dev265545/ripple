@@ -1,0 +1,1 @@
+{"filename":"vendor_status.json","text":"{\n \"outages\": [\n  {\n   \"id\": \"OUT-SW-0912\",\n   \"vendor\": \"sendwave\",\n   \"title\": \"Delayed email delivery\",\n   \"start\": \"2026-09-12T04:00:00Z\",\n   \"end\": \"2026-09-12T07:30:00Z\"\n  }\n ]\n}"}

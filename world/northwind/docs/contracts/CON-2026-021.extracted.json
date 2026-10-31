@@ -1,0 +1,68 @@
+{
+ "id": "CON-2026-021",
+ "type": "contract",
+ "title": "Master Services Agreement CON-2026-021: Bluepeak Travel",
+ "nodes": [
+  {
+   "label": "Contract",
+   "id": "CON-2026-021",
+   "props": {
+    "title": "Master Services Agreement with Bluepeak Travel"
+   },
+   "quote": "Master Services Agreement CON-2026-021: Bluepeak Travel"
+  },
+  {
+   "label": "SLA",
+   "id": "SLA-CON-2026-021",
+   "props": {
+    "uptime_target": 99.95,
+    "credit_percent": 10
+   },
+   "quote": "Northwind Pay guarantees 99.95% monthly uptime for Payments API."
+  }
+ ],
+ "links": [
+  {
+   "from": [
+    "Customer",
+    "name:Bluepeak Travel"
+   ],
+   "type": "HAS_CONTRACT",
+   "to": [
+    "Contract",
+    "CON-2026-021"
+   ],
+   "quote": "Master Services Agreement CON-2026-021: Bluepeak Travel"
+  },
+  {
+   "from": [
+    "Contract",
+    "CON-2026-021"
+   ],
+   "type": "GUARANTEES",
+   "to": [
+    "SLA",
+    "SLA-CON-2026-021"
+   ],
+   "quote": "If monthly uptime falls below the target, the customer receives a service credit of 10% of that month's fees."
+  },
+  {
+   "from": [
+    "SLA",
+    "SLA-CON-2026-021"
+   ],
+   "type": "COVERS",
+   "to": [
+    "Feature",
+    "Payments API"
+   ],
+   "quote": "Northwind Pay guarantees 99.95% monthly uptime for Payments API."
+  }
+ ],
+ "mentions": [
+  [
+   "Customer",
+   "name:Bluepeak Travel"
+  ]
+ ]
+}

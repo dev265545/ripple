@@ -1,0 +1,25 @@
+id,name,email,git_handle,team,role,manager
+mara,Mara Lindqvist,mara@forkline.example,,Leadership,CEO,
+idris,Idris Okafor,idris@forkline.example,,Leadership,CTO,mara
+hana,Hana Kobayashi,hana@forkline.example,,Query,Engineering Lead,idris
+leo,Leo Brandt,leo@forkline.example,,Query,Senior Engineer,hana
+priya,Priya Nair,priya@forkline.example,,Query,Engineer,hana
+tomas,Tomas Reyes,tomas@forkline.example,,Storage,Engineering Lead,idris
+wen,Wen Zhao,wen@forkline.example,,Storage,Site Reliability Engineer,tomas
+kofi,Kofi Mensah,kofi@forkline.example,,Storage,Engineer,tomas
+sara,Sara Haddad,sara@forkline.example,,Indexing,Engineering Lead,idris
+emil,Emil Novak,emil@forkline.example,,Indexing,Engineer,sara
+ines,Ines Duarte,ines@forkline.example,,Cloud,Engineering Lead,idris
+jonas,Jonas Weber,jonas@forkline.example,,Cloud,Engineer,ines
+dev,Dev Gupta,dev@forkline.example,dev265545,Storage,Engineer,tomas
+nadia,Nadia Petrova,nadia@forkline.example,,Sales,VP Sales,mara
+omar,Omar Farouk,omar@forkline.example,,Sales,Account Executive,nadia
+lucy,Lucy Bennett,lucy@forkline.example,,Sales,Account Executive,nadia
+ravi,Ravi Kapoor,ravi@forkline.example,,Customer Success,Head of Customer Success,mara
+anya,Anya Sokolova,anya@forkline.example,,Customer Success,Account Manager,ravi
+ben,Ben Achterberg,ben@forkline.example,,Customer Success,Account Manager,ravi
+chloe,Chloe Martin,chloe@forkline.example,,Customer Success,Account Manager,ravi
+felix,Felix Aldana,felix@forkline.example,,Support,Support Lead,ravi
+grace,Grace Oyelaran,grace@forkline.example,,Support,Support Engineer,felix
+yusuf,Yusuf Demir,yusuf@forkline.example,,Product,Product Manager,mara
+zoe,Zoe Hartmann,zoe@forkline.example,,Growth,Marketing Lead,mara
