@@ -7,7 +7,7 @@ fix ready to merge.
 
 Built for Graph Hacks (WeMakeDevs × FalkorDB), October 2026.
 
-**Live demo:** _link added after deploy_ (a static snapshot: sign in as Elena Voss for Northwind Pay,
+**Live demo:** [ripple-devgupta.vercel.app](https://ripple-devgupta.vercel.app) (a static snapshot: sign in as Elena Voss for Northwind Pay,
 or John Graham-Cumming for the Cloudflare 2019 WAF outage replay).
 
 ## Run it locally
